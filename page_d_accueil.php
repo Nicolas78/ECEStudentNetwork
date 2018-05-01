@@ -102,6 +102,9 @@
         <div class="col-sm-9">
           <div class="well">
             <p>Contenu de la publication</p>
+
+            <?php include("page_accueil_contenu.php"); ?>
+
           </div>
         </div>
       </div>
