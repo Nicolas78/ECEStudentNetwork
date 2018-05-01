@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head> 
-  <title>ECELinkedIn-Accueil</title>
+  <title>Page de connexion</title>
   <link rel="shortcut icon" href="Images/logo3.ico">
   <meta http-equiv= "content-type" content= "text/html; charset=UTF-8" >
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,16 +29,13 @@
       	<br>
         <h1>Créer un compte </h1>
 		<br>
-		<form method="post" action="traitement.php"> 
+		<form method="POST" action="inscription.php"> 
 
 			<label> Prénom: </label> 
 			<input type="text" name="Prenom" id="Prenom"/> <br>
 
 			<label> Nom: </label>
 			<input type="text" name="Nom" id="Nom"/> <br>
-			
-			<label> Pseudo: </label>
-			<input type="text" name="Pseudo" id="Pseudo"/> <br>
 
 			<label> E-Mail: </label>
 			<input type="email" name="Email" id="Email"/> <br>
@@ -54,7 +51,7 @@
 			<label style="width: 300px;">  Importer une image de fond: <br> </label> 
 			<input type="file" name="image_de_fond" style="padding-left: 80px;" /> <br>
 
-			<strong> <input type="submit" name="Soumettre" value="S'incrire" style="border:none;
+			<strong> <input type="submit" name="inscrire" value="S'incrire" style="border:none;
 	   padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:transparent;"> </strong>
 		
 		</form>
@@ -66,17 +63,17 @@
       	<br>
         <h1> S'identifier </h1>
 		<br><br>
-        <form method="post" action="traitement.php"> 
+        <form method="POST" action="connexion.php"> 
 		
 			<label> E-Mail: </label>
-			<input type="email" name="Prenom" id="Prenom"/> <br>
+			<input type="email" name="Coemail" id="Coemail"/> <br>
 
 			<label> Mot de passe: </label>
-			<input type="password" name="Motdepasse" id="Motdepasse"/> <br><br>
+			<input type="password" name="Copassword" id="Copassword"/> <br><br>
 
-			<strong> <input type="submit" name="Soumettre" value="Connexion" style="border:none;
+			<strong> <input type="submit" name="connexion" value="Connexion" style="border:none;
 	   padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:transparent;"> </strong>
-			<br><br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br><br>
 
 		</form>
 
