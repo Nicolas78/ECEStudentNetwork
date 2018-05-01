@@ -1,33 +1,4 @@
-﻿-- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
---
--- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 01 mai 2018 à 14:46
--- Version du serveur :  5.7.19
--- Version de PHP :  5.6.31
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de données :  `bdd`
---
-
--- --------------------------------------------------------
-
---
--- Structure de la table `aime`
---
-
+﻿
 DROP TABLE IF EXISTS `aime`;
 CREATE TABLE IF NOT EXISTS `aime` (
   `id_aime` int(4) NOT NULL,
@@ -37,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `aime` (
   PRIMARY KEY (`id_aime`),
   KEY `id_utilisateur` (`id_utilisateur`),
   KEY `id_publication` (`id_publication`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -54,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
   PRIMARY KEY (`id_commentaire`),
   KEY `id_utilisateur` (`id_utilisateur`),
   KEY `id_publication` (`id_publication`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -71,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   PRIMARY KEY (`id_contact`),
   KEY `id_utilisateur1` (`id_utilisateur1`),
   KEY `id_utilisateur2` (`id_utilisateur2`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -88,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `emploi` (
   `id_auteur` int(4) NOT NULL,
   PRIMARY KEY (`id_emploi`),
   KEY `id_auteur` (`id_auteur`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -106,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
   `id_emploi` int(4) NOT NULL,
   PRIMARY KEY (`id_entreprise`),
   KEY `id_emploi` (`id_emploi`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -125,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `media` (
   `id_utilisateur` int(4) NOT NULL,
   PRIMARY KEY (`id_media`),
   KEY `id_utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -144,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   PRIMARY KEY (`id_message`),
   KEY `id_utilisateur` (`id_utilisateur`),
   KEY `id_ami` (`id_ami`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -159,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `messagerie` (
   `id_contact` int(4) NOT NULL,
   PRIMARY KEY (`id_messagerie`),
   KEY `id_contact` (`id_contact`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -176,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `notification` (
   `id_contact` int(4) NOT NULL,
   PRIMARY KEY (`id_notification`),
   KEY `id_contact` (`id_contact`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -193,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `partage` (
   PRIMARY KEY (`id_partage`),
   KEY `id_utilisateur` (`id_utilisateur`),
   KEY `id_publication` (`id_publication`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -215,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `publication` (
   PRIMARY KEY (`id_publication`),
   KEY `id_utilisateur` (`id_utilisateur`),
   KEY `id_media` (`id_media`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -239,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `imagefond` varchar(20) DEFAULT NULL,
   `humeur` enum('CONTENT','BOF','PAS CONTENT','') DEFAULT 'CONTENT',
   PRIMARY KEY (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateur`
@@ -334,6 +305,3 @@ ALTER TABLE `publication`
   ADD CONSTRAINT `publication_ibfk_2` FOREIGN KEY (`id_media`) REFERENCES `media` (`id_media`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
