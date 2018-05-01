@@ -17,33 +17,27 @@ echo "echo2";
 	if($db_found)
 	{
 		echo "echo3";
-		$sql_mail = "SELECT mail FROM utilisateur";
+		$sql = "SELECT mail, motdepasse FROM utilisateur";
 		//$sql_password = "SELECT motdepasse FROM utilisateur WHERE motdepasse = '".Copassword."' ";
-		$result_mail = mysqli_query($db_handle,$sql_mail);	
+		$result = mysqli_query($db_handle,$sql);	
 
-	while($data = mysqli_fetch_assoc($result_mail))
-	{
-		//echo "Prenom:" .$data[0] ;echo "<br>";
-		if (strcmp($Coemail, $data["mail"])==0)
+		while($data = mysqli_fetch_assoc($result))
 		{
-			echo "trouve";
+			if (strcmp($Coemail, $data["mail"])==0)
+			{
+				if (strcmp($Copassword, $data["motdepasse"])==0 ) 
+				{
+					echo "Trouvé";
+				}
+			}	
 		}
-	}		
 	}
 
-	else echo "non trouve";
+	else
+	{
+		echo "Database not found";
+	}
 
-
-	//$result = mysqli_query($db_handle,$sql);
-	//echo "Add successful";
+	}
 }
-	
-else //échec connexion à la BDD
-{
-	echo "remplir les champs !!";
-}
-}
-
-//mysqli_close($db_handle);
-
- ?>
+?>
