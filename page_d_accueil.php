@@ -62,9 +62,9 @@
 
         </p>
         <p> Humeur: <br><br>
-          <button type="button" name="smiley_content" style="width:35px";> &#128515; </button>
-          <button type="button" name="simley_bof" style="width:35px";> &#128528;</button>
-          <button type="button" name="smiley_pas_content" style="width:35px";>&#128544; </button>     
+          <button id="smiley_content" style="width:35px";> &#128515; </button>
+          <button id="smiley_bof" style="width:35px";> &#128528;</button>
+          <button id="smiley_pas_content" style="width:35px";>&#128544; </button>     
         </p>
 
         <p> Promotion:  </p>

@@ -45,5 +45,17 @@ li button{
 }
 
 button:hover{
-	border: 2px blue solid;
+	border: 2px #008CBA solid;
+}
+
+#smiley_content:focus{
+	background-color: #008CBA;
+}
+
+#smiley_bof:focus{
+	background-color: #008CBA;
+}
+
+#smiley_pas_content:focus{
+	background-color: #008CBA;
 }
