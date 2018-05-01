@@ -28,10 +28,10 @@ echo "echo2";
 		{
 			echo "trouve";
 		}
-		else echo "non trouve";
-
 	}		
 	}
+
+	else echo "non trouve";
 
 
 	//$result = mysqli_query($db_handle,$sql);

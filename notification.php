@@ -28,12 +28,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li> <a href="page_d_accueil.html">Accueil</a></li>
-        <li><a href="reseau.html">Réseau</a></li>
-        <li><a href="emplois.html">Emplois</a></li>
-        <li><a href="messagerie.html">Messagerie</a></li>
+        <li> <a href="page_d_accueil.php">Accueil</a></li>
+        <li><a href="reseau.php">Réseau</a></li>
+        <li><a href="emplois.php">Emplois</a></li>
+        <li><a href="messagerie.php">Messagerie</a></li>
         <li class="active"><a href="notification.html">Notifications</a></li>
-        <li><a href="vous.html">Vous</a></li>
+        <li><a href="vous.php">Vous</a></li>
         <li> <button type="button" name="Se Deconnecter">Se Deconnecter </button> </li>
       </ul>
     </div>
