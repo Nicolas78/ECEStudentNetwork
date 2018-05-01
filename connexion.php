@@ -5,37 +5,43 @@ $Coemail = isset($_POST["Coemail"]) ? $_POST["Coemail"] : "";
 $Copassword = isset($_POST["Copassword"]) ? $_POST["Copassword"] : "";
 $connexion = isset($_POST["connexion"]) ? $_POST["connexion"] : "";
 
-$database = "linkedin"; //la base de donnée
+$database = "BDD"; //la base de donnée
 
 $db_handle = mysqli_connect('localhost','root'); //identifiants de la BDD
 $db_found = mysqli_select_db($db_handle,$database); //connexion à la BDD
 
+if($connexion){ //si bouton clické
+echo "echo1";
 if ($Coemail != "" && $Copassword != "") {
-
+echo "echo2";
 	if($db_found)
 	{
-		$sql1 = "SELECT * FROM bestenterprisetbl WHERE bestenterprisetbl.Prenom = '".prenom."' ";
-		$result1 = mysqli_query($db_handle,$sql1);
-	
-	}
+		echo "echo3";
+		$sql_mail = "SELECT mail FROM utilisateur";
+		//$sql_password = "SELECT motdepasse FROM utilisateur WHERE motdepasse = '".Copassword."' ";
+		$result_mail = mysqli_query($db_handle,$sql_mail);	
 
-	$sql = 	
-
-	$result1 = mysqli_query($db_handle,$sql);
-
-	while($data = mysqli_fetch_row($result1))
+	while($data = mysqli_fetch_assoc($result_mail))
 	{
-		echo "Prenom:" .$data[0] ;echo "<br>";
-			
+		//echo "Prenom:" .$data[0] ;echo "<br>";
+		if (strcmp($Coemail, $data["mail"])==0)
+		{
+			echo "trouve";
+		}
+		else echo "non trouve";
+
+	}		
 	}
 
-	$result = mysqli_query($db_handle,$sql);
-	echo "Add successful";
+
+	//$result = mysqli_query($db_handle,$sql);
+	//echo "Add successful";
 }
 	
 else //échec connexion à la BDD
 {
-	echo "Database not found";
+	echo "remplir les champs !!";
+}
 }
 
 //mysqli_close($db_handle);

@@ -9,14 +9,14 @@ $photo_de_profil = isset($_FILES["photo_de_profil"]);
 $image_de_fond = isset($_FILES["image_de_fond"]);
 $inscrire = isset($_POST["inscrire"]) ? $_POST["inscrire"] : "";
 
-$database = "linkedin"; //la base de donnée
+$database = "BDD"; //la base de donnée
 
 $db_handle = mysqli_connect('localhost','root'); //identifiants de la BDD
 $db_found = mysqli_select_db($db_handle,$database); //connexion à la BDD
 
-if(inscrire){ //si bouton clické
+if($inscrire){ //si bouton clické
 
-if ($Prenom != "" && $Nom != "" &&  $Email != "" && $Motdepasse != "" && empty($photo_de_profil) && empty($image_de_fond)) {
+if ($Prenom != "" && $Nom != "" &&  $Email != "" && $Motdepasse != "" && !empty($photo_de_profil) && !empty($image_de_fond)) {
 
 	/*if($db_found)
 	{
