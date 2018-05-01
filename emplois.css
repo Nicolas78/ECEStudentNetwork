@@ -31,6 +31,17 @@ footer {
   width: auto;
 }
 
+button{
+	font-size: 20px;
+	margin-top: 5px;
+	width: 180px;
+	text-align: center;
+	color: white;
+	border:none;
+	background-color: #008CBA;
+	border-radius:15px ;
+}
+
 li button{
 	font-size: 20px;
 	margin-top: 5px;
@@ -41,3 +52,4 @@ li button{
 	background-color: white;
 	border-radius:15px ;
 }
+
