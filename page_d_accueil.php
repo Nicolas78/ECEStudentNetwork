@@ -44,15 +44,27 @@
   <div class="row">
     <div class="col-sm-3 well">
       <div class="well">
-        <p><a href="#">Mon profil</a></p>
-        <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">           <!---->
+        <p><a href="vous.php">Mon profil</a></p>
+        <!--<img src="photo_profil/profil1.jpg" class="img-circle" height="80" width="80" alt="Avatar">           <!---->
+        
       </div>
       <div class="well">
-        <p> Dernière date de connexion:  </p>
+        <p> Dernière connexion:  
+        <?php
+        $zone = new DateTimeZone('Europe/Paris');
+        $dt = new DateTime();
+
+        $dt->setTimezone($zone);
+        $date = $dt->format('d/m/Y');
+
+        echo $date;
+        ?>
+
+        </p>
         <p> Humeur: <br><br>
-           <button type="button" name="smiley_pas_content" style="width:35px";>&#128544; </button>
-          <button type="button" name="smiley_bof" style="width:35px";> &#128515; </button>
-          <button type="button" name="simley_content" style="width:35px";> &#128528;</button>
+          <button type="button" name="smiley_content" style="width:35px";> &#128515; </button>
+          <button type="button" name="simley_bof" style="width:35px";> &#128528;</button>
+          <button type="button" name="smiley_pas_content" style="width:35px";>&#128544; </button>     
         </p>
 
         <p> Promotion:  </p>
@@ -103,7 +115,7 @@
           <div class="well">
             <p>Contenu de la publication</p>
 
-            <?php include("page_accueil_contenu.php"); ?>
+            <?php include("page_accueil_contenu.php"); noms(); ?>
 
           </div>
         </div>

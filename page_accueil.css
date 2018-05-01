@@ -1,10 +1,12 @@
 body{
+
 	font-family: Georgia, serif ;
 	font-size: 15px;
 }
 
 .nom .prenom .pseudo .email .modepasse .photoprofil .imagefond{
-margin-bottom:20px;
+	
+	margin-bottom:20px;
 }
 
 
@@ -40,4 +42,8 @@ li button{
 	border:none;
 	background-color: white;
 	border-radius:15px ;
+}
+
+button:hover{
+	border: 2px blue solid;
 }
