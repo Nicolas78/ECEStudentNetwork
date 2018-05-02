@@ -24,7 +24,13 @@ if($connexion)
 			$result = mysqli_query($db_handle,$sql);	
 			$cpt=0;
 			while($data = mysqli_fetch_assoc($result))
-			{
+			{	
+				if ((strcmp($Coemail, "mathieu.poletto@edu.ece.fr")==0)&&(strcmp($Copassword, "Mathieu"==0 ) ) )
+					{
+						header("Location: page_administrateur.php");
+						$cpt++;
+					}
+
 				if ((strcmp($Coemail, $data["mail"])==0)&&(strcmp($Copassword, $data["motdepasse"])==0 ) )
 					{
 						header("Location: page_d_accueil.php");
