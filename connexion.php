@@ -22,6 +22,11 @@ if($connexion)
 			$cpt=0;
 			while($data = mysqli_fetch_assoc($result))
 			{
+				if ((strcmp($Coemail, "mathieu.poletto@edu.ece.fr")==0)&&(strcmp($Copassword,"Mathieu")==0 ) )
+				{
+					header("Location: page_administrateur.php");
+				}
+
 				if ((strcmp($Coemail, $data["mail"])==0)&&(strcmp($Copassword, $data["motdepasse"])==0 ) )
 					{
 						header("Location: page_d_accueil.php");
@@ -29,6 +34,7 @@ if($connexion)
 					}
 			}
 			if($cpt==0) { header("Location: page_de_connection.php"); }
+
 		}
 		else
 		{
@@ -37,7 +43,6 @@ if($connexion)
 	}
 	else
 	{
-		echo "Champs vides";
 		header("Location: page_de_connection.php");
 	}
 }

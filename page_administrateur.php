@@ -22,15 +22,17 @@
 </nav>
   
 <div class="container text-center" style="padding-top:160px">  
-<h1>Bienvenue sur votre compte administrateur<h1>
+<h1>Bienvenue sur votre compte administrateur
+<button id="accueil" style="border:none;
+     padding: 10px 0 6px 0; margin-left: 80px;border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:transparent;">  <a href="page_d_accueil.php"> Accueil </a></button> <h1> 
 
   <div class="row">
     <div class="col-sm-6 well">
       <div class="inscription">
       	<br>
-        <h2> Créer un compte <span class="glyphicon glyphicon-plus"></span> </h2>
+        <h2> Créer un compte  &nbsp;&nbsp;<span class="glyphicon glyphicon-plus"></span> </h2>
 		<br>
-		<form method="post" action="traitement.php"> 
+		<form method="POST" action="inscription.php">  
 
 			<label> Prénom: </label> 
 			<input type="text" name="Prenom" id="Prenom"/> <br>
@@ -55,7 +57,7 @@
 			<label style="width: 300px;">  Importer une image de fond: <br> </label> 
 			<input type="file" name="image_de_fond" style="padding-left: 80px;" /> <br>
 
-			<strong> <input type="submit" name="Soumettre" value="Incrire" style="border:none;
+			<strong> <input type="submit" name="Soumettre" value="Inscrire" style="border:none;
 	   padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:transparent;"> </strong>
 		
 		</form>
@@ -63,14 +65,11 @@
     </div>
 
      <div class="col-sm-6 well">
-      <div class="identification">
+      <div class="suppression">
       	<br>
-        <h2> Supprimer un compte </h2>
+        <h2> Supprimer un compte <span class="glyphicon glyphicon-trash"></span> </h2>
 		<br><br>
-		Ici, affichage de la liste des comptes de + de 5 ans et possibilité de suppression.
-		<span class="glyphicon glyphicon-trash"></span>
-
-		</form>
+      
 
       </div>
     </div>
