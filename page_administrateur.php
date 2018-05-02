@@ -32,16 +32,13 @@
       	<br>
         <h2> Créer un compte  &nbsp;&nbsp;<span class="glyphicon glyphicon-plus"></span> </h2>
 		<br>
-		<form method="POST" action="inscription.php">  
+		<form method="POST" action="inscriptionadmin.php">  
 
 			<label> Prénom: </label> 
 			<input type="text" name="Prenom" id="Prenom"/> <br>
 
 			<label> Nom: </label>
 			<input type="text" name="Nom" id="Nom"/> <br>
-			
-			<label> Pseudo: </label>
-			<input type="text" name="Pseudo" id="Pseudo"/> <br>
 
 			<label> E-Mail: </label>
 			<input type="email" name="Email" id="Email"/> <br>
@@ -57,7 +54,7 @@
 			<label style="width: 300px;">  Importer une image de fond: <br> </label> 
 			<input type="file" name="image_de_fond" style="padding-left: 80px;" /> <br>
 
-			<strong> <input type="submit" name="Soumettre" value="Inscrire" style="border:none;
+			<strong> <input type="submit" name="inscrire" value="Inscrire" style="border:none;
 	   padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:transparent;"> </strong>
 		
 		</form>

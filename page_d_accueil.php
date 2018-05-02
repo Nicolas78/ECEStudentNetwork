@@ -70,8 +70,8 @@
         <p> Promotion:  </p>
         <p><a href="#">Intêrets: </a></p>
         <p>
-          <span class="label label-default">News</span>                                        <!---->
-          <span class="label label-primary">W3Schools</span>                                   <!---->
+          <span class="label label-default">News</span>
+          <span class="label label-primary">W3Schools</span>                                   
           <span class="label label-success">Labels</span>
           <span class="label label-info">Football</span>
           <span class="label label-warning">Gaming</span>
