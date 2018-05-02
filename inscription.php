@@ -16,11 +16,13 @@ $db_found = mysqli_select_db($db_handle,$database); //connexion à la BDD
 
 if($inscrire)
 { //si bouton clické
-
-	if ($Prenom != "" && $Nom != "" &&  $Email != "" && $Motdepasse != "" )
-	{
+	//on vérifie si les champs sont non vides
+	if ($Prenom != "" && $Nom != "" &&  $Email != "" && $Motdepasse != "" &&
+		( $_FILES['photo_de_profil']['error'] != UPLOAD_ERR_NO_FILE ) &&
+		($_FILES['image_de_fond']['error'] != UPLOAD_ERR_NO_FILE) )
+	{	//si la bdd est trouvée
 		if($db_found)
-		{
+		{	echo "ok";
 			$sql_utilisateur = "SELECT COUNT(utilisateur.id_utilisateur), nom, prenom, mail FROM utilisateur ";
 
 			$result = mysqli_query($db_handle,$sql_utilisateur);
@@ -34,21 +36,28 @@ if($inscrire)
 
 				if ($requete) 
 				{
-					echo "Add successful";
+					echo "Ajout effectué";
+					//appel de la page page d'accueil
+					header("Location: page_d_accueil.php");
 				}
 
 				else
 				{
-					echo "Add failed";
+					echo "Erreur lors de l'ajout";
+					//on retourne à la page de connexion
+					header("Location: page_de_connection.php");
 				}								
 			}
-		
 		}
-		
 		else //échec connexion à la BDD
 		{
 			echo "Database not found";
 		}
+	}
+	else
+	{
+		echo "Champs vides";
+		header("Location: page_de_connection.php");
 	}
 }
 

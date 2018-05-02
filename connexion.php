@@ -10,34 +10,36 @@ $database = "BDD"; //la base de donnée
 $db_handle = mysqli_connect('localhost','root'); //identifiants de la BDD
 $db_found = mysqli_select_db($db_handle,$database); //connexion à la BDD
 
-if($connexion){ //si bouton clické
-echo "echo1";
-if ($Coemail != "" && $Copassword != "") {
-echo "echo2";
-	if($db_found)
+if($connexion)
+{ //si bouton clické
+	if ($Coemail != "" && $Copassword != "")
 	{
-		echo "echo3";
-		$sql = "SELECT mail, motdepasse FROM utilisateur";
-		//$sql_password = "SELECT motdepasse FROM utilisateur WHERE motdepasse = '".Copassword."' ";
-		$result = mysqli_query($db_handle,$sql);	
-
-		while($data = mysqli_fetch_assoc($result))
+		if($db_found)
 		{
-			if (strcmp($Coemail, $data["mail"])==0)
+			$sql = "SELECT mail, motdepasse FROM utilisateur";
+			//$sql_password = "SELECT motdepasse FROM utilisateur WHERE motdepasse = '".Copassword."' ";
+			$result = mysqli_query($db_handle,$sql);	
+			$cpt=0;
+			while($data = mysqli_fetch_assoc($result))
 			{
-				if (strcmp($Copassword, $data["motdepasse"])==0 ) 
-				{
-					echo "Trouvé";
-				}
-			}	
+				if ((strcmp($Coemail, $data["mail"])==0)&&(strcmp($Copassword, $data["motdepasse"])==0 ) )
+					{
+						header("Location: page_d_accueil.php");
+						$cpt++;
+					}
+			}
+			if($cpt==0) { header("Location: page_de_connection.php"); }
+		}
+		else
+		{
+			echo "Database not found";
 		}
 	}
-
 	else
 	{
-		echo "Database not found";
-	}
-
+		echo "Champs vides";
+		header("Location: page_de_connection.php");
 	}
 }
+
 ?>
