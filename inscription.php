@@ -14,38 +14,42 @@ $database = "BDD"; //la base de donnée
 $db_handle = mysqli_connect('localhost','root'); //identifiants de la BDD
 $db_found = mysqli_select_db($db_handle,$database); //connexion à la BDD
 
-if($inscrire){ //si bouton clické
+if($inscrire)
+{ //si bouton clické
 
-if ($Prenom != "" && $Nom != "" &&  $Email != "" && $Motdepasse != "" )
-{
-
-	if($db_found)
+	if ($Prenom != "" && $Nom != "" &&  $Email != "" && $Motdepasse != "" )
 	{
-		echo "echo3";
-
-		$sql = "INSERT INTO utilisateur(nom, prenom, mail, motdepasse) VALUES('$Prenom','$Nom','$Email','$Motdepasse')";
-
-		$requete = mysqli_query($db_handle,$sql);
-
-		echo "echo4";
-
-		if ($requete) 
+		if($db_found)
 		{
-			echo "Add successful";
-		}
+			$sql_utilisateur = "SELECT COUNT(utilisateur.id_utilisateur), nom, prenom, mail FROM utilisateur ";
 
-		else
-		{
-			echo "Add failed";
+			$result = mysqli_query($db_handle,$sql_utilisateur);
+
+			while($data = mysqli_fetch_row($result))
+			{
+				echo "".((int)$data[0]+1);
+				$sql = "INSERT INTO utilisateur(id_utilisateur, nom, prenom, mail, motdepasse) VALUES(".((int)$data[0]+1).",'$Prenom','$Nom','$Email','$Motdepasse')";
+
+				$requete = mysqli_query($db_handle,$sql);
+
+				if ($requete) 
+				{
+					echo "Add successful";
+				}
+
+				else
+				{
+					echo "Add failed";
+				}								
+			}
+		
 		}
-}
-	
-	else //échec connexion à la BDD
-	{
-		echo "Database not found";
+		
+		else //échec connexion à la BDD
+		{
+			echo "Database not found";
+		}
 	}
-}
-
 }
 
 ?>
