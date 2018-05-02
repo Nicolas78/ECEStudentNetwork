@@ -44,63 +44,65 @@
   <div class="row">
     <div class="col-sm-10 well">
       <div class="well">
-        <h2>Mes Relations (nombre) </h2>					 <!-- ajouter le nombre de relation!-->
+        <h2> Vous avez <?php include("reseau_contenu.php"); getNombreContact(); ?> contact(s) </h2>  <!-- ajouter le nombre de relation!-->
       </div>
-   		<br><br>
+      <br><br>
 
-		<div class="col-sm-12 well">
-   	   		<div class="col-sm-2 well">
-				<a href="">Photo de profil de l'ami</a>
-			</div>
-			<div class="col-sm-3 well">
-				<p> Prenom Ami </p>
-			</div>
-			<div class="col-sm-3 well">
-				<p> Nom Ami </p>
-			</div>
-			<div class="col-sm-2 well">
-				<a href="">Type d'ami</a>
-			</div>
-			<div class="col-sm-2 well">
-				<a href="">Last connexion</a>
-			</div>			
-    	</div>
-		
-		<div class="col-sm-12 well">
-   	   		<div class="col-sm-2 well">
-				<a href="">Photo de profil de l'ami</a>
-			</div>
-			<div class="col-sm-3 well">
-				<p> Prenom Ami </p>
-			</div>
-			<div class="col-sm-3 well">
-				<p> Nom Ami </p>
-			</div>
-			<div class="col-sm-2 well">
-				<a href="">Type d'ami</a>
-			</div>
-			<div class="col-sm-2 well">
-				<a href="">Last connexion</a>
-			</div>			
-    	</div>
+    <div class="col-sm-12 well">
+          <div class="col-sm-2 well">
+        <a href="">Photo de profil de l'ami</a>
+        <?php include("reseau_photo.php"); getLienPhoto(); ?>
 
-		<div class="col-sm-12 well">
-   	   		<div class="col-sm-2 well">
-				<a href="">Photo de profil de l'ami</a>
-			</div>
-			<div class="col-sm-3 well">
-				<p> Prenom Ami </p>
-			</div>
-			<div class="col-sm-3 well">
-				<p> Nom Ami </p>
-			</div>
-			<div class="col-sm-2 well">
-				<a href="">Type d'ami</a>
-			</div>
-			<div class="col-sm-2 well">
-				<a href="">Last connexion</a>
-			</div>			
-    	</div>
+      </div>
+      <div class="col-sm-3 well">
+        <p> Prenom Ami </p>
+      </div>
+      <div class="col-sm-3 well">
+        <p> Nom Ami </p>
+      </div>
+      <div class="col-sm-2 well">
+        <a href="">Type d'ami</a>
+      </div>
+      <div class="col-sm-2 well">
+        <a href="">Last connexion</a>
+      </div>      
+      </div>
+    
+    <div class="col-sm-12 well">
+          <div class="col-sm-2 well">
+        <a href="">Photo de profil de l'ami</a>
+      </div>
+      <div class="col-sm-3 well">
+        <p> Prenom Ami </p>
+      </div>
+      <div class="col-sm-3 well">
+        <p> Nom Ami </p>
+      </div>
+      <div class="col-sm-2 well">
+        <a href="">Type d'ami</a>
+      </div>
+      <div class="col-sm-2 well">
+        <a href="">Last connexion</a>
+      </div>      
+      </div>
+
+    <div class="col-sm-12 well">
+          <div class="col-sm-2 well">
+        <a href="">Photo de profil de l'ami</a>
+      </div>
+      <div class="col-sm-3 well">
+        <p> Prenom Ami </p>
+      </div>
+      <div class="col-sm-3 well">
+        <p> Nom Ami </p>
+      </div>
+      <div class="col-sm-2 well">
+        <a href="">Type d'ami</a>
+      </div>
+      <div class="col-sm-2 well">
+        <a href="">Last connexion</a>
+      </div>      
+      </div>
 
 
      </div>

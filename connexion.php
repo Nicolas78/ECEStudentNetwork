@@ -1,11 +1,14 @@
 <?php 
 
+session_start();
+
 // les variables pour l'identification
 $Coemail = isset($_POST["Coemail"]) ? $_POST["Coemail"] : "";
 $Copassword = isset($_POST["Copassword"]) ? $_POST["Copassword"] : "";
 $connexion = isset($_POST["connexion"]) ? $_POST["connexion"] : "";
-
 $database = "BDD"; //la base de donnée
+
+$_SESSION['mail'] = $Coemail;
 
 $db_handle = mysqli_connect('localhost','root'); //identifiants de la BDD
 $db_found = mysqli_select_db($db_handle,$database); //connexion à la BDD
@@ -22,11 +25,6 @@ if($connexion)
 			$cpt=0;
 			while($data = mysqli_fetch_assoc($result))
 			{
-				if ((strcmp($Coemail, "mathieu.poletto@edu.ece.fr")==0)&&(strcmp($Copassword,"Mathieu")==0 ) )
-				{
-					header("Location: page_administrateur.php");
-				}
-
 				if ((strcmp($Coemail, $data["mail"])==0)&&(strcmp($Copassword, $data["motdepasse"])==0 ) )
 					{
 						header("Location: page_d_accueil.php");
@@ -34,7 +32,6 @@ if($connexion)
 					}
 			}
 			if($cpt==0) { header("Location: page_de_connection.php"); }
-
 		}
 		else
 		{
@@ -43,6 +40,7 @@ if($connexion)
 	}
 	else
 	{
+		echo "Champs vides";
 		header("Location: page_de_connection.php");
 	}
 }
