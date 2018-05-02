@@ -34,7 +34,7 @@
         <li><a href="messagerie.php">Messagerie</a></li>
         <li><a href="notification.php">Notifications</a></li>
         <li><a href="vous.php">Vous</a></li>
-        <li> <button type="button" name="Se Deconnecter">Se Deconnecter </button> </li>
+        <li><a href="page_de_connection.php"> <button type="button" name="Se Deconnecter">Se Deconnecter </button></a> </li>
       </ul>
     </div>
   </div> 

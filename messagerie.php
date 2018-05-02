@@ -28,18 +28,45 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="page_d_accueil.php">Accueil</a></li>
+        <li> <a href="page_d_accueil.php">Accueil</a></li>
         <li><a href="reseau.php">Réseau</a></li>
         <li><a href="emplois.php">Emplois</a></li>
-        <liclass="active"><a href="messagerie.php">Messagerie</a></li>
+        <li class="active"><a href="messagerie.php">Messagerie</a></li>
         <li><a href="notification.php">Notifications</a></li>
         <li><a href="vous.php">Vous</a></li>
-        <li> <button type="button" name="Se Deconnecter">Se Deconnecter </button> </li>
+        <li><a href="page_de_connection.php"> <button type="button" name="Se Deconnecter">Se Deconnecter </button></a> </li>
       </ul>
     </div>
   </div> 
 </nav>
  
+
+ <div class="container text-center" style="margin:110px">    
+  <div class="row">
+    <div class="col-sm-12 well">
+      <div class="well">
+       <h1>Mes Messages</h1>
+      </div>
+      <div class="well">
+          <div class="col-sm-3"> <h2>Conversations</h2></div>
+          <div class="col-sm-9">
+            <p> <strong>Titre Conversation</strong> </p> 
+            <p>Contenu Conversation</p>
+          </div>
+      </div>
+
+      <div class="well">
+          <div class="col-sm-3"> <h2>Conversations</h2></div>
+          <div class="col-sm-9">
+            <p> <strong>Titre Conversation</strong> </p> 
+            <p>Contenu Conversation</p>
+          </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
 
 <footer class="container-fluid text-center">
 

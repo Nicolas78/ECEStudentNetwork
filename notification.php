@@ -32,13 +32,39 @@
         <li><a href="reseau.php">Réseau</a></li>
         <li><a href="emplois.php">Emplois</a></li>
         <li><a href="messagerie.php">Messagerie</a></li>
-        <li class="active"><a href="notification.html">Notifications</a></li>
+        <li class="active"><a href="notification.php">Notifications</a></li>
         <li><a href="vous.php">Vous</a></li>
-        <li> <button type="button" name="Se Deconnecter">Se Deconnecter </button> </li>
+        <li><a href="page_de_connection.php"> <button type="button" name="Se Deconnecter">Se Deconnecter </button></a> </li>
       </ul>
     </div>
   </div> 
 </nav>
+
+<div class="container text-center" style="margin:110px">    
+  <div class="row">
+    <div class="col-sm-12 well">
+      <div class="well">
+       <h1>Mes Notifications</h1>
+      </div>
+      <div class="well">
+        
+          <div class="well"">
+            <div class="col-sm-6">Titre evenement</div>
+            <div class="col-sm-6"><strong>  Contenu evenement </strong></div>
+          </div>
+          <div class="well"">
+            <div class="col-sm-6">Titre evenement</div>
+            <div class="col-sm-6"><strong>  Contenu evenement </strong></div>
+          </div>
+          <div class="well"">
+            <div class="col-sm-6">Titre evenement</div>
+            <div class="col-sm-6"><strong>  Contenu evenement </strong></div>
+          </div>
+       
+      </div> 
+    </div>
+  </div>
+</div>
  
 
 <footer class="container-fluid text-center">
