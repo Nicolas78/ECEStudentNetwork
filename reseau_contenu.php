@@ -18,17 +18,19 @@ function getNombreContact()
 
 		while ($data = mysqli_fetch_assoc($result)) 
 		{
-			echo "".$data['id_utilisateur'];
-			$_SESSION["id"] = $data['id_utilisateur'];
+			//echo "".$data['id_utilisateur'];
+			$_SESSION['id'] = $data['id_utilisateur'];
 		}
-			
-		/*$sql = "SELECT COUNT(contact.id_utilisateur2) FROM contact,utilisateur WHERE utilsateurcontact.id_utilisateur1 = utilisateur.id_utilisateur OR contact.id_utilisateur2 = utilisateur.id_utilisateur";
-		$result = mysqli_query($db_handle, $sql);
 
-		while ($data = mysqli_fetch_row($result)) 
+		$id = $_SESSION['id'];
+			
+		$sql1 = "SELECT COUNT(contact.id_utilisateur2) FROM contact WHERE contact.id_utilisateur1 = '".$id."' OR contact.id_utilisateur2 = '".$id."'  ";
+		$result1 = mysqli_query($db_handle, $sql1);
+
+		while ($data = mysqli_fetch_row($result1)) 
 		{
 			echo "".(int)$data[0];
-		}*/
+		}
 
 	}
 }

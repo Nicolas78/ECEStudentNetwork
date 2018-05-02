@@ -51,7 +51,7 @@
     <div class="col-sm-12 well">
           <div class="col-sm-2 well">
         <a href="">Photo de profil de l'ami</a>
-        <?php include("reseau_photo.php"); getLienPhoto(); ?>
+        <?php  ?>
 
       </div>
       <div class="col-sm-3 well">
