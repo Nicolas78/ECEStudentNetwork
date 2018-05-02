@@ -1,4 +1,13 @@
-﻿
+﻿--
+-- Base de données :  `bdd`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `aime`
+--
+
 DROP TABLE IF EXISTS `aime`;
 CREATE TABLE IF NOT EXISTS `aime` (
   `id_aime` int(4) NOT NULL,
@@ -8,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `aime` (
   PRIMARY KEY (`id_aime`),
   KEY `id_utilisateur` (`id_utilisateur`),
   KEY `id_publication` (`id_publication`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -25,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
   PRIMARY KEY (`id_commentaire`),
   KEY `id_utilisateur` (`id_utilisateur`),
   KEY `id_publication` (`id_publication`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -42,7 +51,24 @@ CREATE TABLE IF NOT EXISTS `contact` (
   PRIMARY KEY (`id_contact`),
   KEY `id_utilisateur1` (`id_utilisateur1`),
   KEY `id_utilisateur2` (`id_utilisateur2`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `conversation`
+--
+
+DROP TABLE IF EXISTS `conversation`;
+CREATE TABLE IF NOT EXISTS `conversation` (
+  `id_conversation` int(4) NOT NULL,
+  `nom` varchar(30) NOT NULL,
+  `id_utilisateur1` int(4) NOT NULL,
+  `id_utilisateur2` int(4) NOT NULL,
+  PRIMARY KEY (`id_conversation`),
+  KEY `id_utilisateur1` (`id_utilisateur1`),
+  KEY `id_utilisateur2` (`id_utilisateur2`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -57,9 +83,11 @@ CREATE TABLE IF NOT EXISTS `emploi` (
   `periode` int(20) NOT NULL,
   `actions` varchar(20) NOT NULL,
   `id_auteur` int(4) NOT NULL,
+  `id_entreprise` int(4) NOT NULL,
   PRIMARY KEY (`id_emploi`),
-  KEY `id_auteur` (`id_auteur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `id_auteur` (`id_auteur`),
+  KEY `id_entreprise` (`id_entreprise`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -74,10 +102,8 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
   `secteur_activite` varchar(20) NOT NULL,
   `logo` int(4) NOT NULL,
   `mail_entreprise` varchar(20) NOT NULL,
-  `id_emploi` int(4) NOT NULL,
-  PRIMARY KEY (`id_entreprise`),
-  KEY `id_emploi` (`id_emploi`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id_entreprise`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -96,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `media` (
   `id_utilisateur` int(4) NOT NULL,
   PRIMARY KEY (`id_media`),
   KEY `id_utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -107,30 +133,12 @@ CREATE TABLE IF NOT EXISTS `media` (
 DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `id_message` int(4) NOT NULL,
-  `titre` varchar(20) NOT NULL,
-  `date_message` date NOT NULL,
+  `date_message` datetime NOT NULL,
   `contenu` text NOT NULL,
-  `id_utilisateur` int(4) NOT NULL,
-  `id_ami` int(4) NOT NULL,
+  `id_conversation` int(4) NOT NULL,
   PRIMARY KEY (`id_message`),
-  KEY `id_utilisateur` (`id_utilisateur`),
-  KEY `id_ami` (`id_ami`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `messagerie`
---
-
-DROP TABLE IF EXISTS `messagerie`;
-CREATE TABLE IF NOT EXISTS `messagerie` (
-  `id_messagerie` int(4) NOT NULL,
-  `contenu` varchar(50) NOT NULL,
-  `id_contact` int(4) NOT NULL,
-  PRIMARY KEY (`id_messagerie`),
-  KEY `id_contact` (`id_contact`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `id_conversation` (`id_conversation`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -145,9 +153,11 @@ CREATE TABLE IF NOT EXISTS `notification` (
   `contenu` varchar(50) NOT NULL,
   `date_notif` date NOT NULL,
   `id_contact` int(4) NOT NULL,
+  `id_publication` int(4) NOT NULL,
   PRIMARY KEY (`id_notification`),
-  KEY `id_contact` (`id_contact`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `id_contact` (`id_contact`),
+  KEY `id_publication` (`id_publication`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -164,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `partage` (
   PRIMARY KEY (`id_partage`),
   KEY `id_utilisateur` (`id_utilisateur`),
   KEY `id_publication` (`id_publication`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -186,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `publication` (
   PRIMARY KEY (`id_publication`),
   KEY `id_utilisateur` (`id_utilisateur`),
   KEY `id_media` (`id_media`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -210,14 +220,14 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `imagefond` varchar(20) DEFAULT NULL,
   `humeur` enum('CONTENT','BOF','PAS CONTENT','') DEFAULT 'CONTENT',
   PRIMARY KEY (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `mail`, `motdepasse`, `lastConnexion`, `promotion`, `type`, `interet`, `photo`, `CV`, `imagefond`, `humeur`) VALUES
-(1, 'Baralle', 'Nicolas', 'nicolas.baralle@edu.ece.fr', 'Nicolas', '2018-05-01', 2020, 'Auteur', 'Java', NULL, NULL, NULL, 'CONTENT'),
+(1, 'Nicolas', 'Baralle', 'nicolas.baralle@edu.ece.fr', 'nicolas', '2018-05-01', 2020, 'Auteur', 'Java', NULL, NULL, NULL, 'CONTENT'),
 (2, 'Poletto', 'Mathieu', 'mathieu.poletto@edu.ece.fr', 'Mathieu', '2018-05-01', 2020, 'Administrateur', 'Sport', NULL, NULL, NULL, 'CONTENT'),
 (3, 'Remurier', 'Leo', 'leo.remurier@edu.ece.fr', 'Leo', '2018-05-01', 2020, 'Auteur', 'Sport', NULL, NULL, NULL, 'CONTENT'),
 (4, 'Saumon', 'Jean', 'jean.saumon@gmail.com', 'Jean', '2018-05-01', 2020, 'Auteur', 'Java', NULL, NULL, NULL, 'PAS CONTENT'),
@@ -254,16 +264,18 @@ ALTER TABLE `contact`
   ADD CONSTRAINT `contact_ibfk_2` FOREIGN KEY (`id_utilisateur2`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Contraintes pour la table `conversation`
+--
+ALTER TABLE `conversation`
+  ADD CONSTRAINT `conversation_ibfk_1` FOREIGN KEY (`id_utilisateur1`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `conversation_ibfk_2` FOREIGN KEY (`id_utilisateur2`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Contraintes pour la table `emploi`
 --
 ALTER TABLE `emploi`
-  ADD CONSTRAINT `emploi_ibfk_1` FOREIGN KEY (`id_auteur`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `entreprise`
---
-ALTER TABLE `entreprise`
-  ADD CONSTRAINT `entreprise_ibfk_1` FOREIGN KEY (`id_emploi`) REFERENCES `emploi` (`id_emploi`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `emploi_ibfk_1` FOREIGN KEY (`id_auteur`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `emploi_ibfk_2` FOREIGN KEY (`id_entreprise`) REFERENCES `entreprise` (`id_entreprise`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `media`
@@ -275,20 +287,14 @@ ALTER TABLE `media`
 -- Contraintes pour la table `message`
 --
 ALTER TABLE `message`
-  ADD CONSTRAINT `message_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `message_ibfk_2` FOREIGN KEY (`id_ami`) REFERENCES `contact` (`id_contact`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `messagerie`
---
-ALTER TABLE `messagerie`
-  ADD CONSTRAINT `messagerie_ibfk_1` FOREIGN KEY (`id_contact`) REFERENCES `contact` (`id_contact`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `message_ibfk_1` FOREIGN KEY (`id_conversation`) REFERENCES `conversation` (`id_conversation`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `notification`
 --
 ALTER TABLE `notification`
-  ADD CONSTRAINT `notification_ibfk_1` FOREIGN KEY (`id_contact`) REFERENCES `contact` (`id_contact`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `notification_ibfk_1` FOREIGN KEY (`id_contact`) REFERENCES `contact` (`id_contact`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `notification_ibfk_2` FOREIGN KEY (`id_publication`) REFERENCES `publication` (`id_publication`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `partage`
@@ -304,4 +310,3 @@ ALTER TABLE `publication`
   ADD CONSTRAINT `publication_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `publication_ibfk_2` FOREIGN KEY (`id_media`) REFERENCES `media` (`id_media`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
-
