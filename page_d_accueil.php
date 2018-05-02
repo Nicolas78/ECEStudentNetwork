@@ -45,7 +45,7 @@
     <div class="col-sm-3 well">
       <div class="well">
         <p><a href="vous.php">Mon profil</a></p>
-        <!--<img src="photo_profil/profil1.jpg" class="img-circle" height="80" width="80" alt="Avatar">           <!---->
+        <!--<img src="bdd et sauvegarde/photo_profil_utilisateurs/profil1.jpg" class="img-circle" height="80" width="80" alt="Avatar">           <!---->
         
       </div>
       <div class="well">
