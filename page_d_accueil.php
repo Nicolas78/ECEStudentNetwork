@@ -55,9 +55,9 @@
         $dt = new DateTime();
 
         $dt->setTimezone($zone);
-        $date = $dt->format('d/m/Y');
+        $date = $dt->format('d/m/Y - h:i:s');
 
-        echo $date;
+        echo $date;      
         ?>
 
         </p>
