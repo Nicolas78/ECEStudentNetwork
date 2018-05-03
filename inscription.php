@@ -33,8 +33,8 @@ if($inscrire)
 				$path = $_FILES['photo_de_profil']['name'];
 				$ext = pathinfo($path, PATHINFO_EXTENSION);
 
-				$target_dir = "bdd et sauvegarde/photo_profil_utilisateurs/";
-				$target_file = $target_dir . 'photo' . ((int)$data[0]+1) . '.' . $ext;
+				$target_dir = "bdd_et_sauvegarde/photo_profil_utilisateurs/";
+				$target_file = $target_dir . 'profil' . ((int)$data[0]+1) . '.' . $ext;
 				$uploadOk = 1;
 
 				if (move_uploaded_file($_FILES["photo_de_profil"]["tmp_name"], $target_file)) {
@@ -46,7 +46,7 @@ if($inscrire)
 				$path1 = $_FILES['image_de_fond']['name'];
 				$ext1 = pathinfo($path1, PATHINFO_EXTENSION);
 
-				$target_dir1 = "bdd et sauvegarde/photo_fond_utilisateurs/";
+				$target_dir1 = "bdd_et_sauvegarde/photo_fond_utilisateurs/";
 				$target_file1 = $target_dir1 . 'fond' . ((int)$data[0]+1) . '.' . $ext1;
 				$uploadOk1 = 1;
 
@@ -64,14 +64,14 @@ if($inscrire)
 				{
 					echo "Ajout effectué";
 					//appel de la page page d'accueil
-					//header("Location: page_d_accueil.php");
+					header("Location: page_d_accueil.php");
 				}
 
 				else
 				{
 					echo "Erreur lors de l'ajout";
 					//on retourne à la page de connexion
-					//header("Location: page_de_connection.php");
+					header("Location: page_de_connection.php");
 				}								
 			}
 		}
