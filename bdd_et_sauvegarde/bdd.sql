@@ -1,4 +1,22 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  jeu. 03 mai 2018 à 11:58
+-- Version du serveur :  5.7.19
+-- Version de PHP :  5.6.31
 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données :  `bdd`
@@ -323,9 +341,9 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `promotion` int(4) DEFAULT NULL,
   `type` enum('Administrateur','Auteur') NOT NULL DEFAULT 'Auteur',
   `interet` enum('Sport','Art','Jeux-vidéos','Sciences','Matlab','C','C++','Java','Html/Css','Python') DEFAULT NULL,
-  `photo` varchar(20) DEFAULT NULL,
-  `CV` varchar(20) DEFAULT NULL,
-  `imagefond` varchar(20) DEFAULT NULL,
+  `photo` varchar(100) DEFAULT NULL,
+  `CV` varchar(100) DEFAULT NULL,
+  `imagefond` varchar(100) DEFAULT NULL,
   `humeur` enum('CONTENT','BOF','PAS CONTENT','') DEFAULT 'CONTENT',
   PRIMARY KEY (`id_utilisateur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -335,16 +353,16 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `mail`, `motdepasse`, `lastConnexion`, `promotion`, `type`, `interet`, `photo`, `CV`, `imagefond`, `humeur`) VALUES
-(1, 'Nicolas', 'Baralle', 'nicolas.baralle@edu.ece.fr', 'nicolas', '2018-05-01', 2020, 'Auteur', 'Java', 'profil1.jpg', NULL, 'fond1.jpg', 'CONTENT'),
-(2, 'Poletto', 'Mathieu', 'mathieu.poletto@edu.ece.fr', 'Mathieu', '2018-05-01', 2020, 'Administrateur', 'Sport', 'profil2.jpg', NULL, 'fond2.jpg', 'CONTENT'),
-(3, 'Remurier', 'Leo', 'leo.remurier@edu.ece.fr', 'Leo', '2018-05-01', 2020, 'Auteur', 'Sport', 'profil3.jpg', NULL, 'fond3.jpg', 'CONTENT'),
-(4, 'Saumon', 'Jean', 'jean.saumon@gmail.com', 'Jean', '2018-05-01', 2022, 'Auteur', 'Java', 'profil4.jpg', NULL, 'fond4.jpg', 'PAS CONTENT'),
-(5, 'Carpe', 'Pierre', 'pierre.carpe@gmail.com', 'Pierre', '2018-05-01', 2020, 'Auteur', 'Sciences', 'profil5.jpg', NULL, 'fond5.jpg', 'BOF'),
-(6, 'Merou', 'Didier', 'didier.meru@gmail.com', 'Didier', '2018-05-01', 2020, 'Auteur', 'Art', 'profil6.jpg', NULL, 'fond6.jpg', 'CONTENT'),
-(7, 'Bar', 'Christophe', 'christophe.bar@gmail.com', 'Christophe', '2018-05-01', 2020, 'Auteur', 'C++', 'profil7.jpg', NULL, 'fond7.jpg', 'CONTENT'),
-(8, 'Truite', 'Claude', 'claude.truite@gmail.com', 'Claude', '2018-05-01', 2020, 'Auteur', 'Python', 'profil8.jpg', NULL, 'fond8.jpg', 'CONTENT'),
-(9, 'Merlu', 'Clement', 'clement.merlu@gmail.com', 'Clement', '2018-05-01', 2018, 'Auteur', 'C', 'profil9.jpg', NULL, 'fond9.jpg', 'CONTENT'),
-(10, 'Requin', 'Charles', 'charles.requin@gmail.com', 'Charles', '2018-05-01', 2021, 'Auteur', 'Matlab', 'profil10.jpg', NULL, 'fond10.jpg', 'CONTENT');
+(1, 'Baralle', 'Nicolas', 'nicolas.baralle@edu.ece.fr', 'Nicolas', '2018-05-01', 2020, 'Auteur', 'Java', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil1.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond1.jpg', 'CONTENT'),
+(2, 'Poletto', 'Mathieu', 'mathieu.poletto@edu.ece.fr', 'Mathieu', '2018-05-01', 2020, 'Administrateur', 'Sport', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil4.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond7.jpg', 'CONTENT'),
+(3, 'Remurier', 'Leo', 'leo.remurier@edu.ece.fr', 'Leo', '2018-05-01', 2020, 'Auteur', 'Sport', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil5.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond2.jpg', 'CONTENT'),
+(4, 'Saumon', 'Jean', 'jean.saumon@gmail.com', 'Jean', '2018-05-01', 2022, 'Auteur', 'Java', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil7.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond6.jpg', 'PAS CONTENT'),
+(5, 'Carpe', 'Pierre', 'pierre.carpe@gmail.com', 'Pierre', '2018-05-01', 2020, 'Auteur', 'Sciences', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil6.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond8.jpg', 'BOF'),
+(6, 'Merou', 'Didier', 'didier.meru@gmail.com', 'Didier', '2018-05-01', 2020, 'Auteur', 'Art', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil2.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond9.jpg', 'CONTENT'),
+(7, 'Bar', 'Christophe', 'christophe.bar@gmail.com', 'Christophe', '2018-05-01', 2020, 'Auteur', 'C++', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil8.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond4.jpg', 'CONTENT'),
+(8, 'Truite', 'Claude', 'claude.truite@gmail.com', 'Claude', '2018-05-01', 2020, 'Auteur', 'Python', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil3.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond10.jpg', 'CONTENT'),
+(9, 'Merlu', 'Clement', 'clement.merlu@gmail.com', 'Clement', '2018-05-01', 2018, 'Auteur', 'C', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil9.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond5.jpg', 'CONTENT'),
+(10, 'Requin', 'Charles', 'charles.requin@gmail.com', 'Charles', '2018-05-01', 2021, 'Auteur', 'Matlab', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil10.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond3.jpg', 'CONTENT');
 
 --
 -- Contraintes pour les tables déchargées
@@ -418,3 +436,7 @@ ALTER TABLE `publication`
   ADD CONSTRAINT `publication_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `publication_ibfk_2` FOREIGN KEY (`id_media`) REFERENCES `media` (`id_media`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
