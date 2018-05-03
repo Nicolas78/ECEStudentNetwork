@@ -71,7 +71,7 @@
         </p>
 
         <p> <h3> Promotion: </h3> </p>
-         <?php include("promotion.php"); getpromotion(); ?>
+         <?php include("promotion.php");?>
 
         <p> <h3><a href="#">Intêrets:</a></h3></p>
         <p>
@@ -105,23 +105,9 @@
         </div>
       </div>
       
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well">
-           <p>John</p>
-           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
-          </div>
-        </div>
-        <div class="col-sm-9">
-          <div class="well">
-            <p>Contenu de la publication</p>
 
-            <?php include("page_accueil_contenu.php"); noms(); ?>
-
-          </div>
-        </div>
-      </div>
-      <div class="row">
+      <?php include("accueil_publication.php"); ?>
+ 
        
       
       </div>     
