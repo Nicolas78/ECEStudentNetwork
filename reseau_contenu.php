@@ -2,8 +2,29 @@
 
 function getNombreContact()
 {
-	session_start();
 
+
+	echo '
+
+	<style>
+
+body{
+	font-family: Georgia, serif ;
+	font-size: 15px;
+}
+
+h2{
+	font-size: 25px;
+	font-weight: bold ;
+	color: #007179;
+
+}    </style> ';
+
+
+
+
+
+	session_start();
 	$database = "BDD"; //la base de donnée
 
 	$db_handle = mysqli_connect('localhost','root'); //identifiants de la BDD
@@ -36,15 +57,21 @@ function getNombreContact()
 		$sql2 = "SELECT DISTINCT nom,prenom,promotion,lastConnexion FROM utilisateur INNER JOIN contact ON utilisateur.id_utilisateur = contact.id_utilisateur1 OR utilisateur.id_utilisateur = contact.id_utilisateur2 WHERE contact.id_utilisateur1 = '".$id."' OR contact.id_utilisateur2 = '".$id."'  ";
 		$result2 = mysqli_query($db_handle, $sql2);
 		
+
+	echo '<html><div class="col-sm-12 well "></html>';
+
+		echo'<div class="col-sm-2 " style:"font-size: 15px;""><h2>Image</h2></div>
+    	  	<div class="col-sm-3 "><h2>Nom</h2></div>
+    	  	<div class="col-sm-3 "><h2>Prenom</h2></div>
+    	  	<div class="col-sm-2 "><h2>Promotion</h2></div>
+    	  	<div class="col-sm-2 "><h2>Nom</h2></div>';
+
 		while ($data1 = mysqli_fetch_row($result2)) 
 		{
-			echo '<html><div class="col-sm-12 well"></html>';
-
-
-				echo '<html>
+		echo '<html>
 			
-        	  	<div class="col-sm-2 well">
-        	 
+        	  <div class="col-sm-2 well">
+     
 	      		</div>
     	  		<div class="col-sm-3 well">
    	            <p> 
@@ -62,7 +89,7 @@ function getNombreContact()
 
        		 	echo "".$data1[1];  
 
-        		echo ';<html>
+        		echo '<html>
            		 </p>
      			 </div>
       			<div class="col-sm-2 well">
@@ -74,21 +101,17 @@ function getNombreContact()
         		<html>
      			 </div>
       			<div class="col-sm-2 well">
-        		<a href="">
         		</html>';
 
         		echo "".$data1[3];
 
         		echo'
         		<html>
-        		</a>
       			</div>      
       			</div>
 
       			</html>';
-		
-
-
+	
 		}
 
 	}
