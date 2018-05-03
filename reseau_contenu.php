@@ -29,7 +29,69 @@ function getNombreContact()
 
 		while ($data = mysqli_fetch_row($result1)) 
 		{
-			echo "".(int)$data[0];
+			echo "".(int)$data[0]. " contact(s)";
+			$_SESSION['nbreContact'] = $data[0];
+		}
+
+		$sql2 = "SELECT DISTINCT nom,prenom,promotion,lastConnexion FROM utilisateur INNER JOIN contact ON utilisateur.id_utilisateur = contact.id_utilisateur1 OR utilisateur.id_utilisateur = contact.id_utilisateur2 WHERE contact.id_utilisateur1 = '".$id."' OR contact.id_utilisateur2 = '".$id."'  ";
+		$result2 = mysqli_query($db_handle, $sql2);
+		
+		while ($data1 = mysqli_fetch_row($result2)) 
+		{
+			echo '<html><div class="col-sm-12 well"></html>';
+
+			$nom = $_SESSION['nom'];
+			$prenom = $_SESSION['prenom'];
+
+
+				echo '<html>
+			
+        	  	<div class="col-sm-2 well">
+        	 
+	      		</div>
+    	  		<div class="col-sm-3 well">
+   	            <p> 
+	            </html>';
+
+	            echo "".$data1[0];
+  		       	
+  	             echo '
+           		 <html>
+           		 </p>
+     			 </div>
+      			<div class="col-sm-3 well">
+      		  	<p> 
+   		     	</html>';
+
+       		 	echo "".$data1[1];  
+
+        		echo ';<html>
+           		 </p>
+     			 </div>
+      			<div class="col-sm-2 well">
+      			</html>';
+
+      			echo "".$data1[2];
+
+        		echo '
+        		<html>
+     			 </div>
+      			<div class="col-sm-2 well">
+        		<a href="">
+        		</html>';
+
+        		echo "".$data1[3];
+
+        		echo'
+        		<html>
+        		</a>
+      			</div>      
+      			</div>
+
+      			</html>';
+		
+
+
 		}
 
 	}
