@@ -54,7 +54,7 @@ h2{
 			$_SESSION['nbreContact'] = $data[0];
 		}
 
-		$sql2 = "SELECT DISTINCT nom,prenom,promotion,lastConnexion FROM utilisateur INNER JOIN contact ON utilisateur.id_utilisateur = contact.id_utilisateur1 OR utilisateur.id_utilisateur = contact.id_utilisateur2 WHERE contact.id_utilisateur1 = '".$id."' OR contact.id_utilisateur2 = '".$id."'  ";
+		$sql2 = "SELECT DISTINCT nom,prenom,promotion,lastConnexion, photo FROM utilisateur INNER JOIN contact ON utilisateur.id_utilisateur = contact.id_utilisateur1 OR utilisateur.id_utilisateur = contact.id_utilisateur2 WHERE contact.id_utilisateur1 = '".$id."' OR contact.id_utilisateur2 = '".$id."'  ";
 		$result2 = mysqli_query($db_handle, $sql2);
 		
 
@@ -71,7 +71,11 @@ h2{
 		echo '<html>
 			
         	  <div class="col-sm-2 well">
-     
+        	  </html>';
+
+     			print '<img src="'.$data1[4].'" height="80" width="80" alt="photo" />'; //affiche photo utilisateur
+
+     			echo'<html>
 	      		</div>
     	  		<div class="col-sm-3 well">
    	            <p> 
