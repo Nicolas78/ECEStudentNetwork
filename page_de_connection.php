@@ -29,7 +29,7 @@
       	<br>
         <h1>Créer un compte </h1>
 		<br>
-		<form method="POST" action="inscription.php"> 
+		<form method="POST" action="inscription.php" enctype="multipart/form-data"> 
 
 			<label> Prénom: </label> 
 			<input type="text" name="Prenom" id="Prenom"/> <br>
@@ -46,7 +46,7 @@
 			<label style="text-align :left;	font-size: 20px;font-weight: bold ;color: #007179;"> Images:  </label> <br>
 
 			<label style="width: 300px;"> Importer une photo de profil: <br> </label>
-			<input type="file" name="photo_de_profil" style="padding-left: 80px;" />  <br>
+			<input type="file" name="photo_de_profil" id="photo_de_profil" style="padding-left: 80px;" />  <br>
 
 			<label style="width: 300px;">  Importer une image de fond: <br> </label> 
 			<input type="file" name="image_de_fond" style="padding-left: 80px;" /> <br>
