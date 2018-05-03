@@ -48,20 +48,12 @@
        <button type="button" name="recherche" > Rechercher un emploi </button>
        <button type="button" name="publier" > Publier une offre d'emploi</button>
       </div>
-      <div class="well">
-        <h1>Dernières offres d'emplois</h1>
+      
+
+        <?php include("emplois_contenu.php");?>
 
 
-
-          <div class="well" style="height: 200px;">
-            <div class="col-sm-3"> Logo Entreprise</div>
-            <div class="col-sm-3"><strong>  Nom entreprise </strong></div>
-            <div class="col-sm-4"> Intitulé du Poste</div>
-            <div class="col-sm-2"> <button type="button" name="" > Envoyer candidature</button></div>
-                                       <!-- envoie le CV à l'adresse mail de l'entreprise-->
-          </div>
-
-       
+          
       </div> 
     </div>
   </div>
