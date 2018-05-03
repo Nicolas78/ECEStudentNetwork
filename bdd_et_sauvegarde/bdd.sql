@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 03 mai 2018 à 11:58
+-- Généré le :  jeu. 03 mai 2018 à 12:25
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -175,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
   `id_entreprise` int(4) NOT NULL,
   `nom_entreprise` varchar(20) NOT NULL,
   `secteur_activite` varchar(20) NOT NULL,
-  `logo` varchar(30) NOT NULL,
+  `logo` varchar(100) NOT NULL,
   `mail_entreprise` varchar(20) NOT NULL,
   PRIMARY KEY (`id_entreprise`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -185,10 +185,10 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
 --
 
 INSERT INTO `entreprise` (`id_entreprise`, `nom_entreprise`, `secteur_activite`, `logo`, `mail_entreprise`) VALUES
-(1, 'ENCOM', 'Numérique', '1.jpg', 'encom@gmail.com'),
-(2, 'Logee', 'Design', '2.jpg', 'libee@yahoo.com'),
-(3, 'Robotics', 'Robotique', '3.jpg', 'robotics@outlook.com'),
-(4, 'BLN', 'Numérique', '4.jpg', 'bln@gmail.com');
+(1, 'ENCOM', 'Numérique', 'bdd_et_sauvegarde/photos_profils_entreprises/1.jpg', 'encom@gmail.com'),
+(2, 'Logee', 'Design', 'bdd_et_sauvegarde/photos_profils_entreprises/2.jpg', 'libee@yahoo.com'),
+(3, 'Robotics', 'Robotique', 'bdd_et_sauvegarde/photos_profils_entreprises/3.jpg', 'robotics@outlook.com'),
+(4, 'BLN', 'Numérique', 'bdd_et_sauvegarde/photos_profils_entreprises/4.jpg', 'bln@gmail.com');
 
 -- --------------------------------------------------------
 

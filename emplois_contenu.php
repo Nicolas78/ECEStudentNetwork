@@ -9,7 +9,7 @@
 
 	if ($db_found) 
 	{
-		$sql = "SELECT entreprise.nom_entreprise, emploi.type_emploi, emploi.actions FROM emploi INNER JOIN entreprise ON entreprise.id_entreprise = emploi.id_entreprise ";
+		$sql = "SELECT entreprise.nom_entreprise, emploi.type_emploi, emploi.actions, entreprise.logo FROM emploi INNER JOIN entreprise ON entreprise.id_entreprise = emploi.id_entreprise ";
 		$result = mysqli_query($db_handle, $sql);
 
 		echo '
@@ -23,10 +23,18 @@
 			echo '
 			<html>
 			<div class="well" style="height: 200px;">
-            <div class="col-sm-2"> Logo Entreprise</div>
-            <div class="col-sm-2"> Nom entreprise : <strong>
+            <div class="col-sm-2"> 
             </html>';
 
+            print '<img src="'.$data[3].'" height="100" width="100" alt="photo" />'; //affiche le logo
+
+            echo'
+            <html>
+            </div>
+            
+            <div class="col-sm-2"> Nom entreprise : <strong>
+            </html>';
+            
             echo "".$data[0];
 
             echo'
