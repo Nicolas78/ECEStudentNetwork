@@ -1,3 +1,5 @@
+<?php  session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -49,7 +51,7 @@
         
       </div>
       <div class="well">
-        <p> Dernière connexion:  
+        <p> <h3>Dernière connexion: </h3>
         <?php
         $zone = new DateTimeZone('Europe/Paris');
         $dt = new DateTime();
@@ -61,25 +63,24 @@
         ?>
 
         </p>
-        <p> Humeur: <br><br>
-          <button id="smiley_content" style="width:35px";> &#128515; </button>
+        <p> <h3> Humeur:</h3>
+         <?php include("humeur.php"); gethumeur(); ?>
+          <!--<button id="smiley_content" style="width:35px";> &#128515; </button>
           <button id="smiley_bof" style="width:35px";> &#128528;</button>
-          <button id="smiley_pas_content" style="width:35px";>&#128544; </button>     
+          <button id="smiley_pas_content" style="width:35px";>&#128544; </button>     -->
         </p>
 
-        <p> Promotion:  </p>
-        <p><a href="#">Intêrets: </a></p>
+        <p> <h3> Promotion: </h3> </p>
+         <?php include("promotion.php"); getpromotion(); ?>
+
+        <p> <h3><a href="#">Intêrets:</a></h3></p>
         <p>
-          <span class="label label-default">News</span>
-          <span class="label label-primary">W3Schools</span>                                   
-          <span class="label label-success">Labels</span>
-          <span class="label label-info">Football</span>
-          <span class="label label-warning">Gaming</span>
-          <span class="label label-danger">Friends</span>
+                                  
+          <span class="label label-success">  <?php include("interet.php"); getinteret(); ?>
+</span>
+
         </p>
-        <p> Experiences professionnelles: <p>
-        <p> CV:</p>
-        <p> Autres:</p>
+        <p><h3> CV:</h3></p>
       </div>
      </div>
     <div class="col-sm-7">
