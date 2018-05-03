@@ -40,9 +40,6 @@ function getNombreContact()
 		{
 			echo '<html><div class="col-sm-12 well"></html>';
 
-			$nom = $_SESSION['nom'];
-			$prenom = $_SESSION['prenom'];
-
 
 				echo '<html>
 			
