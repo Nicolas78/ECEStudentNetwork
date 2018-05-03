@@ -42,16 +42,21 @@
  
 
 <div class="container text-center" style="margin:110px">    
-  <div class="row">
-    <div class="col-sm-12 well">
-      <div class="well">
-      <h1> Votre profil</h1>
+  <div class="row" >
+    <div class="col-sm-12 well" >
+      <div class="well" style="background-image: url(<?php include("vous_getfond.php"); ?>); background-repeat:no-repeat; background-position:center center;"> <!-- affiche l'image de fond -->
+      <h1>  </h1>
+
+      <?php include("vous_getphoto.php"); ?> <!-- affiche photo de profil -->
+
       </div>
 
       <div class="well">
 
           <div class="well">
              <h1>Photo de profil sur image de fond</h1>
+
+
           </div>
 
           <div class="well">
