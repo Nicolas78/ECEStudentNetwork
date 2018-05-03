@@ -45,7 +45,7 @@
   <div class="row">
     <div class="col-sm-12 well">
       <div class="well">
-       <form method="POST" action="inscription.php"> 
+       <form method="POST"> 
 
       <label>  </label> 
       <input type="text" name="rechercher" id="rechercher"/> <br>
@@ -56,9 +56,8 @@
     
         </form>
       </div>
-      
-
-        <?php include("emplois_contenu.php");?>
+      <?php include("emplois_contenu.php"); ?>
+       
 
 
           

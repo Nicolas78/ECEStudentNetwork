@@ -1,40 +1,39 @@
 <?php
+      session_start();
 
-	session_start();
+      $rechercher = isset($_POST["rechercher"]) ? $_POST["rechercher"] : "";  
+      $bouton = isset($_POST["search"]) ? $_POST["search"] : "";  
 
-	$database = "BDD"; //la base de donnée
+      $database = "BDD"; //la base de donnée
 
-	$db_handle = mysqli_connect('localhost','root'); //identifiants de la BDD
-	$db_found = mysqli_select_db($db_handle,$database); //connexion à la BDD
+      $db_handle = mysqli_connect('localhost','root'); //identifiants de la BDD
+      $db_found = mysqli_select_db($db_handle,$database); //connexion à la BDD
+     
 
-	if ($db_found) 
-	{
-		$sql = "SELECT entreprise.nom_entreprise, emploi.type_emploi, emploi.actions, entreprise.logo FROM emploi INNER JOIN entreprise ON entreprise.id_entreprise = emploi.id_entreprise ";
-		$result = mysqli_query($db_handle, $sql);
+     $sql="SELECT entreprise.nom_entreprise, emploi.type_emploi, emploi.actions FROM emploi INNER JOIN entreprise ON entreprise.id_entreprise = emploi.id_entreprise";
 
-		echo '
-			<html>
-			<div class="well">
-        	<h1>Dernières offres d emplois</h1>
-			</html>';
+if($bouton)
+{
+      if ($db_found) 
+      {
 
-		while ($data = mysqli_fetch_row($result)) 
-		{
-			echo '
-			<html>
-			<div class="well" style="height: 200px;">
-            <div class="col-sm-2"> 
-            </html>';
-
-            print '<img src="'.$data[3].'" height="100" width="100" alt="photo" />'; //affiche le logo
-
-            echo'
-            <html>
-            </div>
+            if(!empty($rechercher))
+            {
+              $sql = "SELECT entreprise.nom_entreprise, emploi.type_emploi, emploi.actions FROM emploi INNER JOIN entreprise ON entreprise.id_entreprise = emploi.id_entreprise WHERE entreprise.nom_entreprise = '".$rechercher."' OR emploi.type_emploi = '".$rechercher."' OR emploi.actions = '".$rechercher."' ";
+            }
             
+            $result = mysqli_query($db_handle, $sql);
+
+
+            while ($data = mysqli_fetch_row($result)) 
+            {
+                  echo '
+                  <html>
+                  <div class="well" style="height: 200px;">
+            <div class="col-sm-2"> Logo Entreprise</div>
             <div class="col-sm-2"> Nom entreprise : <strong>
             </html>';
-            
+
             echo "".$data[0];
 
             echo'
@@ -60,9 +59,9 @@
             <div class="col-sm-2"> <button type="button" name="" > Envoyer candidature</button></div>
             </div>
             </html>';
- 
-			
-		}
+
+            }
+      }
 }
 
 ?>
