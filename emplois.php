@@ -45,8 +45,16 @@
   <div class="row">
     <div class="col-sm-12 well">
       <div class="well">
-       <button type="button" name="recherche" > Rechercher un emploi </button>
-       <button type="button" name="publier" > Publier une offre d'emploi</button>
+       <form method="POST" action="inscription.php"> 
+
+      <label>  </label> 
+      <input type="text" name="rechercher" id="rechercher"/> <br>
+
+      <strong> <input type="submit" name="search" value="search" style="border:none;
+       padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:transparent;"> </strong>
+
+    
+        </form>
       </div>
       
 
