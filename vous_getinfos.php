@@ -1,5 +1,4 @@
 <?php 
-          //session_start();
 
           $database = "BDD"; //la base de donnée
 
@@ -10,15 +9,23 @@
 
           if ($db_found) 
           {
-          $sql = "SELECT imagefond FROM utilisateur WHERE mail LIKE '".$mail."' ";
+          $sql = "SELECT prenom, nom, promotion FROM utilisateur WHERE mail LIKE '".$mail."' ";
           $result = mysqli_query($db_handle, $sql);
 
           while ($data = mysqli_fetch_row($result)) 
           {
 
-          $image_fond = $data[0];
-          //print '<img src="'.$image_fond.'" height="auto" width="auto" alt="image_fond" />'; //affiche la photo
-          echo "".$image_fond;
+          $prenom = $data[0];
+          $nom = $data[1];
+          $promo = $data[2];
+
+          echo "".$prenom;
+          echo '<td>'.'<br />'; //saut de ligne
+          echo"".$nom;
+          echo '<td>'.'<br />';
+          echo"".$promo;
+          echo '<td>'.'<br />';
+          
           }
           }
 ?>

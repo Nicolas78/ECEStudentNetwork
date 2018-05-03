@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -54,35 +57,20 @@
       <div class="well">
 
           <div class="well">
-             <h1>Photo de profil sur image de fond</h1>
-
-
-          </div>
-
-          <div class="well">
-             <h1>Information générale</h1>
-             <p>Prenom</p>
-             <p>Nom</p>
-             <p>Promotion</p>
+             <h1>Informations générales:</h1>
+             <p> <?php include("vous_getinfos.php"); ?> </p>
+            
              <p>CV</p>
           </div>
 
            <div class="well"> 
             <h1>Experiences:</h1>
-              <div class="col-sm-3">Image entreprise</div>
-              <div class="col-sm-3">Poste</div>
-              <div class="col-sm-3">Entreprise</div>
-              <div class="col-sm-3">Durée</div>
-              <div class="col-sm-12">Description</div>
+              <div class="col-sm-3"> </div>
+              
+              <p> <pre> <?php include("vous_getemploi.php"); ?> </pre> </p>
+              
           </div>
 
-          <div class="well">
-              <div class="col-sm-3">Image entreprise</div>
-              <div class="col-sm-3">Poste</div>
-              <div class="col-sm-3">Entreprise</div>
-              <div class="col-sm-3">Durée</div>
-              <div class="col-sm-12">Description</div>
-          </div>
 
           <div class="well"> 
             <h1>Formation:</h1>
