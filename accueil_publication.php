@@ -49,7 +49,15 @@
 
    		     	</html><p>';
 
-       		 	echo "".$data1[1];  
+				$sqll = "SELECT DISTINCT fichier FROM media INNER JOIN publication ON publication.id_media = media.id_media";
+				$resultt = mysqli_query($db_handle, $sqll);
+
+				if ($dataa = mysqli_fetch_row($resultt))
+				{
+				print '<img src="'.$dataa[0].'" height="50" width="50" alt="photo" />';
+				}
+       		 	echo "".$data1[1];
+
 
        		 	echo '</p></div>';
 	       		 	echo '<div class="col-sm-4 well"> '; echo "".$data1[2];
