@@ -48,19 +48,9 @@
        <h1>Mes Messages</h1>
       </div>
       <div class="well">
-          <div class="col-sm-3"> <h2>Conversations</h2></div>
-          <div class="col-sm-9">
-            <p> <strong>Titre Conversation</strong> </p> 
-            <p>Contenu Conversation</p>
-          </div>
-      </div>
 
-      <div class="well">
-          <div class="col-sm-3"> <h2>Conversations</h2></div>
-          <div class="col-sm-9">
-            <p> <strong>Titre Conversation</strong> </p> 
-            <p>Contenu Conversation</p>
-          </div>
+            <p> <pre> <?php include("messagerie_getmessage.php"); ?> </pre> </p>
+
       </div>
       
     </div>

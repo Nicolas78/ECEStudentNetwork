@@ -99,12 +99,12 @@ CREATE TABLE IF NOT EXISTS `conversation` (
 --
 
 INSERT INTO `conversation` (`id_conversation`, `nom_conversation`, `id_utilisateur1`, `id_utilisateur2`) VALUES
-(1, 'Conv1', 5, 9),
-(2, 'Conv2', 8, 3),
-(3, 'Conv2', 6, 4),
-(4, 'Conv3', 8, 2),
-(5, 'Conv5', 1, 2),
-(6, 'Conv6', 4, 3);
+(1, 'Offre emploi', 5, 9),
+(2, 'Demande de CDI', 8, 3),
+(3, 'Projet Econnect', 6, 4),
+(4, 'Demande de stage', 8, 2),
+(5, 'Rapport Projet', 1, 2),
+(6, 'Mutation', 4, 3);
 
 -- --------------------------------------------------------
 
@@ -209,8 +209,12 @@ CREATE TABLE IF NOT EXISTS `message` (
 --
 
 INSERT INTO `message` (`id_message`, `date_message`, `contenu`, `id_conversation`) VALUES
-(1, '2018-04-04 06:30:23', 'test test test', 2),
-(2, '2018-05-23 10:29:28', 'test2 test2', 5);
+(1, '2018-04-04 06:30:23', 'Bonjour, comment allez-vous?', 2),
+(2, '2018-05-23 10:29:28', 'Merci de votre reponse.', 5),
+(3, '2018-04-29 10:28:35', 'J\'ai un job pour vous!', 4),
+(4, '2018-05-02 18:32:31', 'Merci pour votre offre', 1),
+(5, '2018-05-23 10:30:00', 'Bien recu! ', 5),
+(6, '2018-05-01 00:00:00', 'Reunion demain a 8h', 6);
 
 -- --------------------------------------------------------
 
