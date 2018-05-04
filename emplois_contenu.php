@@ -28,50 +28,27 @@ if($bouton)
 
             while ($data = mysqli_fetch_row($result)) 
             {
-                  echo '<html><div class="well" style="height: 200px;"></html>';
+                  echo '<div class="well" style="height: 200px;">';
 
-                  echo'
-                  <html>
-                  <div class="col-sm-2"> 
-                  </html>';
+                  echo' <div class="col-sm-2"> ';
 
-            print '<img src = "'.$data[3].'" height="80" width="80" alt="photo" />'; //affiche la photo
+                  print '<img src = "'.$data[3].'" height="80" width="80" alt="photo" />'; //affiche la photo
 
-            echo'
-            <html>
-            </div>
-            <div class="col-sm-2"> Nom entreprise : <strong>
-            </html>';
+                  echo' </div> <div class="col-sm-3"> Nom entreprise : <strong> ';
+                  echo "".$data[0];
 
-            echo "".$data[0];
+                  echo'</strong></div> <div class="col-sm-3"> Type de poste : <strong>';
+                  echo "".$data[1];
 
-            echo'
-            <html>
-             </strong></div>
-            <div class="col-sm-3"> Type de poste : <strong>
-            </html>';
+                  echo'</strong></div>  <div class="col-sm-2"> Actions : <strong>';
 
-            echo "".$data[1];
+                  echo "".$data[2];
 
-            echo' 
-            <html>
-            </strong></div>
-            <div class="col-sm-2"> Actions : <strong>
-            </html>';
+                  echo ' </strong></div> <div class="col-sm-2"> 
+                  <a href="mailto:encom@gmail.com"?subject= Candidature" class="btn btn-default style:"> Envoyer candidature </a>
+                  </div>
 
-            echo "".$data[2];
-
-            echo '
-            <html>
-            </strong></div>        
-            
-            <div class="col-sm-2"> 
-            
-                  <a href="mailto:encom@gmail.com"?subject= Candidature" class="btn btn-default"> Envoyer candidature </a>
-            </div>
-
-            </div>
-            </html>';
+                  </div>';
 
             }
       }

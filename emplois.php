@@ -47,27 +47,20 @@
       <div class="well">
        <form method="POST"> 
 
-      <label>  </label> 
-      <input type="text" name="rechercher" id="rechercher"/> <br>
-
+      <div style="font-size: 20px;color: #007179;"> Rechercher une entreprise: </div> <br>
+      <input type="text" name="rechercher" id="rechercher"/> &nbsp&nbsp
       <strong> <input type="submit" name="search" value="search" style="border:none;
        padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:transparent;"> </strong>
 
     
-        </form>
+      </form>
       </div>
       <?php include("emplois_contenu.php"); ?>
        
-
-
-          
       </div> 
     </div>
   </div>
 </div>
-
-
-
  
 
 <footer class="container-fluid text-center">
