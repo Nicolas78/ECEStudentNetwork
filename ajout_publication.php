@@ -22,7 +22,7 @@ if($publier)
 
 		while ($data = mysqli_fetch_row($result)) 
 		{
-			//$_SESSION['id_publication'] = $data[0];
+			$_SESSION['id_publication'] = $data[0];
 			
 			$id_publication = (int)$data[0] + 1;
 			
