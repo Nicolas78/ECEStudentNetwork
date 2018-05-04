@@ -1,14 +1,4 @@
 
---
--- Base de données :  `bdd`
---
-
--- --------------------------------------------------------
-
---
--- Structure de la table `aime`
---
-
 DROP TABLE IF EXISTS `aime`;
 CREATE TABLE IF NOT EXISTS `aime` (
   `id_aime` int(4) NOT NULL,
@@ -285,7 +275,7 @@ DROP TABLE IF EXISTS `publication`;
 CREATE TABLE IF NOT EXISTS `publication` (
   `id_publication` int(4) NOT NULL,
   `date_publication` datetime NOT NULL,
-  `contenu` varchar(50) NOT NULL,
+  `contenu` varchar(300) NOT NULL,
   `titre_publication` varchar(20) NOT NULL,
   `nbreLike` int(4) NOT NULL,
   `nbreCommentaire` int(4) NOT NULL,
@@ -334,16 +324,16 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `mail`, `motdepasse`, `lastConnexion`, `promotion`, `type`, `interet`, `photo`, `CV`, `imagefond`, `humeur`) VALUES
-(1, 'Baralle', 'Nicolas', 'nicolas.baralle@edu.ece.fr', 'Nicolas', '2018-05-01', 2020, 'Auteur', 'Java', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil1.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond1.jpg', 'CONTENT'),
-(2, 'Poletto', 'Mathieu', 'mathieu.poletto@edu.ece.fr', 'Mathieu', '2018-05-01', 2020, 'Administrateur', 'Sport', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil4.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond7.jpg', 'CONTENT'),
-(3, 'Remurier', 'Leo', 'leo.remurier@edu.ece.fr', 'Leo', '2018-05-01', 2020, 'Auteur', 'Sport', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil5.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond2.jpg', 'CONTENT'),
-(4, 'Saumon', 'Jean', 'jean.saumon@gmail.com', 'Jean', '2018-05-01', 2022, 'Auteur', 'Java', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil7.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond6.jpg', 'PAS CONTENT'),
-(5, 'Carpe', 'Pierre', 'pierre.carpe@gmail.com', 'Pierre', '2018-05-01', 2020, 'Auteur', 'Sciences', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil6.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond8.jpg', 'BOF'),
-(6, 'Merou', 'Didier', 'didier.meru@gmail.com', 'Didier', '2018-05-01', 2020, 'Auteur', 'Art', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil2.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond9.jpg', 'CONTENT'),
-(7, 'Bar', 'Christophe', 'christophe.bar@gmail.com', 'Christophe', '2018-05-01', 2020, 'Auteur', 'C++', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil8.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond4.jpg', 'CONTENT'),
-(8, 'Truite', 'Claude', 'claude.truite@gmail.com', 'Claude', '2018-05-01', 2020, 'Auteur', 'Python', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil3.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond10.jpg', 'CONTENT'),
-(9, 'Merlu', 'Clement', 'clement.merlu@gmail.com', 'Clement', '2018-05-01', 2018, 'Auteur', 'C', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil9.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond5.jpg', 'CONTENT'),
-(10, 'Requin', 'Charles', 'charles.requin@gmail.com', 'Charles', '2018-05-01', 2021, 'Auteur', 'Matlab', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil10.jpg', NULL, 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond3.jpg', 'CONTENT');
+(1, 'Baralle', 'Nicolas', 'nicolas.baralle@edu.ece.fr', 'Nicolas', '2018-05-01', 2020, 'Auteur', 'Java', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil1.jpg', 'bdd_et_sauvegarde/fichier_cv/cv1.docx', 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond1.jpg', 'CONTENT'),
+(2, 'Poletto', 'Mathieu', 'mathieu.poletto@edu.ece.fr', 'Mathieu', '2018-05-01', 2020, 'Administrateur', 'Sport', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil4.jpg', 'bdd_et_sauvegarde/fichier_cv/cv2.docx', 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond7.jpg', 'CONTENT'),
+(3, 'Remurier', 'Leo', 'leo.remurier@edu.ece.fr', 'Leo', '2018-05-01', 2020, 'Auteur', 'Sport', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil5.jpg', 'bdd_et_sauvegarde/fichier_cv/cv3.docx', 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond2.jpg', 'CONTENT'),
+(4, 'Saumon', 'Jean', 'jean.saumon@gmail.com', 'Jean', '2018-05-01', 2022, 'Auteur', 'Java', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil7.jpg', 'bdd_et_sauvegarde/fichier_cv/cv4.docx', 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond6.jpg', 'PAS CONTENT'),
+(5, 'Carpe', 'Pierre', 'pierre.carpe@gmail.com', 'Pierre', '2018-05-01', 2020, 'Auteur', 'Sciences', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil6.jpg', 'bdd_et_sauvegarde/fichier_cv/cv5.docx', 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond8.jpg', 'BOF'),
+(6, 'Merou', 'Didier', 'didier.meru@gmail.com', 'Didier', '2018-05-01', 2020, 'Auteur', 'Art', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil2.jpg', 'bdd_et_sauvegarde/fichier_cv/cv6.docx', 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond9.jpg', 'CONTENT'),
+(7, 'Bar', 'Christophe', 'christophe.bar@gmail.com', 'Christophe', '2018-05-01', 2020, 'Auteur', 'C++', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil8.jpg', 'bdd_et_sauvegarde/fichier_cv/cv7.docx', 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond4.jpg', 'CONTENT'),
+(8, 'Truite', 'Claude', 'claude.truite@gmail.com', 'Claude', '2018-05-01', 2020, 'Auteur', 'Python', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil3.jpg', 'bdd_et_sauvegarde/fichier_cv/cv8.docx', 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond10.jpg', 'CONTENT'),
+(9, 'Merlu', 'Clement', 'clement.merlu@gmail.com', 'Clement', '2018-05-01', 2018, 'Auteur', 'C', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil9.jpg', 'bdd_et_sauvegarde/fichier_cv/cv9.docx', 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond5.jpg', 'CONTENT'),
+(10, 'Requin', 'Charles', 'charles.requin@gmail.com', 'Charles', '2018-05-01', 2021, 'Auteur', 'Matlab', 'bdd_et_sauvegarde/photo_profil_utilisateurs/profil10.jpg', 'bdd_et_sauvegarde/fichier_cv/cv10.docx', 'bdd_et_sauvegarde/photo_fond_utilisateurs/fond3.jpg', 'CONTENT');
 
 --
 -- Contraintes pour les tables déchargées

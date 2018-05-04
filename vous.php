@@ -60,12 +60,12 @@ session_start();
              <h1>Informations générales:</h1>
              <p> <?php include("vous_getinfos.php"); ?> </p>
             
-             <p>CV</p>
+             <p> <input type="button" value="Télécharger CV" onclick="window.location='<?php include("vous_getlienCV.php"); ?>.' ;"> </p> <!-- telecharge CV -->
+
           </div>
 
            <div class="well"> 
             <h1>Experiences:</h1>
-              <div class="col-sm-3"> </div>
               
               <p> <pre> <?php include("vous_getemploi.php"); ?> </pre> </p>
               
@@ -74,12 +74,17 @@ session_start();
 
           <div class="well"> 
             <h1>Formation:</h1>
-              <div class="col-sm-3">Image Ecole</div>
-              <div class="col-sm-3">Promotion</div>
+
+              <p> <pre> <?php include("vous_getformation.php"); ?> </pre> </p>
+
           </div>
+
           <div class="well"> 
-              <div class="col-sm-3">Image Ecole</div>
-              <div class="col-sm-3">Promotion</div>
+            <h1>Modifier mes informations:</h1>
+
+            <form action="vous_modification.php" TARGET="_BLANK"> <!-- ouvre une nouvelle fenêtre -->
+    			<input type="submit" value="Modifier"  />
+			</form>
           </div>
 
       </div> 
