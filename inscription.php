@@ -28,51 +28,59 @@ if($inscrire)
 			$result = mysqli_query($db_handle,$sql_utilisateur);
 
 			while($data = mysqli_fetch_row($result))
-			{
+			{	
+				echo " ".$Email." ".$data[3];
+				if ((strcmp($Email, $data[3])) == 0)
+					{
+						echo "Déja inscrit";
+						header("Location: page_de_connection.php");
+					}
+					else {
 
-				$path = $_FILES['photo_de_profil']['name'];
-				$ext = pathinfo($path, PATHINFO_EXTENSION);
+						$path = $_FILES['photo_de_profil']['name'];
+						$ext = pathinfo($path, PATHINFO_EXTENSION);
 
-				$target_dir = "bdd_et_sauvegarde/photo_profil_utilisateurs/";
-				$target_file = $target_dir . 'profil' . ((int)$data[0]+1) . '.' . $ext;
-				$uploadOk = 1;
+						$target_dir = "bdd_et_sauvegarde/photo_profil_utilisateurs/";
+						$target_file = $target_dir . 'profil' . ((int)$data[0]+1) . '.' . $ext;
+						$uploadOk = 1;
 
-				if (move_uploaded_file($_FILES["photo_de_profil"]["tmp_name"], $target_file)) {
-				        echo "The file ". $target_file. " has been uploaded.";
-				    } else {
-				        echo "Erreur lors de l'upload de l'image";
-				    }
+						if (move_uploaded_file($_FILES["photo_de_profil"]["tmp_name"], $target_file)) {
+						        echo "The file ". $target_file. " has been uploaded.";
+						    } else {
+						        echo "Erreur lors de l'upload de l'image";
+						    }
 
-				$path1 = $_FILES['image_de_fond']['name'];
-				$ext1 = pathinfo($path1, PATHINFO_EXTENSION);
+						$path1 = $_FILES['image_de_fond']['name'];
+						$ext1 = pathinfo($path1, PATHINFO_EXTENSION);
 
-				$target_dir1 = "bdd_et_sauvegarde/photo_fond_utilisateurs/";
-				$target_file1 = $target_dir1 . 'fond' . ((int)$data[0]+1) . '.' . $ext1;
-				$uploadOk1 = 1;
+						$target_dir1 = "bdd_et_sauvegarde/photo_fond_utilisateurs/";
+						$target_file1 = $target_dir1 . 'fond' . ((int)$data[0]+1) . '.' . $ext1;
+						$uploadOk1 = 1;
 
-				if (move_uploaded_file($_FILES["image_de_fond"]["tmp_name"], $target_file1)) {
-				        echo "The file ". $target_file1. " has been uploaded.";
-				    } else {
-				        echo "Erreur lors de l'upload du fond";
-				    }
+						if (move_uploaded_file($_FILES["image_de_fond"]["tmp_name"], $target_file1)) {
+						        echo "The file ". $target_file1. " has been uploaded.";
+						    } else {
+						        echo "Erreur lors de l'upload du fond";
+						    }
 
 				
-				$sql = "INSERT INTO utilisateur(id_utilisateur, nom, prenom, mail, motdepasse, photo, imagefond) VALUES(".((int)$data[0]+1).",'$Prenom','$Nom','$Email','$Motdepasse','$target_file', '$target_file1')";
-				$requete = mysqli_query($db_handle,$sql);
+						$sql = "INSERT INTO utilisateur(id_utilisateur, nom, prenom, mail, motdepasse, photo, imagefond) VALUES(".((int)$data[0]+1).",'$Prenom','$Nom','$Email','$Motdepasse','$target_file', '$target_file1')";
+						$requete = mysqli_query($db_handle,$sql);
 
-				if ($requete) 
-				{
-					echo "Ajout effectué";
-					//appel de la page page d'accueil
-					header("Location: page_d_accueil.php");
-				}
-
-				else
-				{
-					echo "Erreur lors de l'ajout";
-					//on retourne à la page de connexion
-					header("Location: page_de_connection.php");
-				}								
+						if ($requete) 
+						{
+							echo "Ajout effectué";
+							//appel de la page page d'accueil
+							header("Location: page_d_accueil.php");
+						}
+						
+						else
+						{
+							echo "Erreur lors de l'ajout";
+							//on retourne à la page de connexion
+							header("Location: page_de_connection.php");
+						}	
+					}							
 			}
 		}
 		else //échec connexion à la BDD
