@@ -171,7 +171,7 @@ DROP TABLE IF EXISTS `media`;
 CREATE TABLE IF NOT EXISTS `media` (
   `id_media` int(4) NOT NULL,
   `lieu` varchar(20) NOT NULL,
-  `fichier` varchar(30) NOT NULL,
+  `fichier` varchar(200) NOT NULL,
   `date_media` datetime NOT NULL,
   `nbreLike` int(4) NOT NULL,
   `nbreCommentaire` int(4) NOT NULL,
@@ -186,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `media` (
 --
 
 INSERT INTO `media` (`id_media`, `lieu`, `fichier`, `date_media`, `nbreLike`, `nbreCommentaire`, `nbrePartage`, `id_utilisateur`) VALUES
-(1, 'Paris', 'remise_diplomes.jpg', '2018-05-02 07:26:22', 0, 0, 0, 3);
+(1, 'Paris', 'bdd_et_sauvegarde/photos_events/remise_diplomes.jpg', '2018-05-02 07:26:22', 0, 0, 0, 10);
 
 -- --------------------------------------------------------
 
@@ -293,7 +293,8 @@ CREATE TABLE IF NOT EXISTS `publication` (
 
 INSERT INTO `publication` (`id_publication`, `date_publication`, `contenu`, `titre_publication`, `nbreLike`, `nbreCommentaire`, `nbrePartage`, `id_utilisateur`, `id_media`) VALUES
 (1, '2018-05-02 07:27:17', 'blabla', 'Remise de diplome', 0, 0, 0, 10, 1),
-(2, '2018-04-11 11:23:00', 'Nouveau travail', 'Publication ', 0, 0, 0, 6, NULL);
+(2, '2018-04-11 11:23:00', 'Nouveau travail', 'Publication ', 0, 0, 0, 6, NULL),
+(3, '2018-05-04 00:56:28', 'ckdcnoknc', 'ok', 0, 0, 0, 4, 1);
 
 -- --------------------------------------------------------
 
