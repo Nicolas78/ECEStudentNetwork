@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head> 
-  <title>Accueil</title>
+  <title>Réseau</title>
   <link rel="shortcut icon" href="logo3.ico">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,14 +42,9 @@
  
 <div class="container text-center" style="margin:110px">    
   <div class="row">
-    <div class="col-sm-10 well">
-      <div class="well">
-        <h2> Vous avez <?php include("reseau_contenu.php"); getNombreContact(); ?> </h2>  <!-- ajouter le nombre de relation!-->
-      </div>
-      <br><br>
-
-    
-     </div>
+    <div class="col-sm-12 well ">
+        <div> Vous avez <?php include("reseau_contenu.php"); getNombreContact(); ?> </div>
+    </div>
   </div>
 </div>
 
