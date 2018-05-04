@@ -40,17 +40,16 @@ if($publier)
 
 		if ($result2) 
 		{
-			echo "OK";
+			header("Location: page_d_accueil.php");
 		}
 
 		else
 		{
-			echo "erreur";
+			echo "erreur de publication";
 		}
 
 	
 		
 	}
 }
-
 ?>

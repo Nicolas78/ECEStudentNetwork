@@ -22,7 +22,7 @@
 
 
 		$sql2 = "SELECT DISTINCT titre_publication, contenu, nbreLike, nbreCommentaire, nbrePartage FROM publication INNER JOIN contact ON 
-		 publication.id_utilisateur = contact.id_utilisateur1 OR publication.id_utilisateur = contact.id_utilisateur2 WHERE contact.id_utilisateur1 = '".$id."' OR contact.id_utilisateur2 = '".$id."' ";
+		 publication.id_utilisateur = contact.id_utilisateur1 OR publication.id_utilisateur = contact.id_utilisateur2 WHERE contact.id_utilisateur1 = '".$id."' OR contact.id_utilisateur2 = '".$id."'  ORDER BY date_publication DESC";
 		$result2 = mysqli_query($db_handle, $sql2);
 		
 		while ($data1 = mysqli_fetch_row($result2)) 
