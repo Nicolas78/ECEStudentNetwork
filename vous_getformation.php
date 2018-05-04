@@ -30,9 +30,22 @@
           $promo = $data[0];
           $specialite = $data[1];
 
-          print '<img src="Images/ECEParis.png" height="auto" width="auto" alt="logo_ECE" />'; //affiche le logo
-          echo "     Diplôme d'ingénieur     Promo: ".$promo."     Spécialité: ".$specialite;
-          echo '<td>'.'<br />';
+
+          echo '<div class="col-sm-12 well" >';
+
+               echo'<div class="col-sm-3 well" >';
+               print '<img src="Images/ECEParis.png" height="auto" width="auto" alt="logo_ECE" />'; //affiche le logo
+
+               echo'<div class="col-sm-3 well" ><br><p>Promotion<strong>';
+               echo "".$promo;
+               echo '</strong></p><br><br></div>';   
+
+               echo'<div class="col-sm-3 well" ><br>Spécialité<p><strong>';
+               echo "".$specialite;
+               echo '</strong></p><br><br></div>'; 
+
+          echo '</div>'; 
+
 
 
           }

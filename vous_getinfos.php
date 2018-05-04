@@ -9,23 +9,20 @@
 
           if ($db_found) 
           {
-          $sql = "SELECT prenom, nom, promotion FROM utilisateur WHERE mail LIKE '".$mail."' ";
-          $result = mysqli_query($db_handle, $sql);
+               $sql = "SELECT prenom, nom, promotion FROM utilisateur WHERE mail LIKE '".$mail."' ";
+               $result = mysqli_query($db_handle, $sql);
 
-          while ($data = mysqli_fetch_row($result)) 
-          {
+               while ($data = mysqli_fetch_row($result)) 
+               {
 
-          $prenom = $data[0];
-          $nom = $data[1];
-          $promo = $data[2];
+                    $prenom = $data[0];
+                    $nom = $data[1];
+                    $promo = $data[2];
 
-          echo "".$prenom;
-          echo '<td>'.'<br />'; //saut de ligne
-          echo"".$nom;
-          echo '<td>'.'<br />';
-          echo"".$promo;
-          echo '<td>'.'<br />';
-          
+                    echo "".'<p> Prenom: <strong>'.$prenom.'</strong> <p>';
+                    echo "".'<p> Nom: <strong>'.$nom.'</strong> <p>';
+                    echo "".'<p> Promotion: <strong>'.$promo.'</strong> <p>';
+               
+               }
           }
-          }
-?>
+?>   

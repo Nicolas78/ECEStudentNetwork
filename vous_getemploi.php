@@ -34,10 +34,24 @@
           $actions = $data[2];
           $type_emploi = $data[3];
 
-          print '<img src="'.$logo.'" height="80" width="80" alt="image_fond" />'; //affiche la photo
-          echo "     ".$nom_entreprise."     Poste: ".$actions."     Type d'emploi: ".$type_emploi;
-          echo '<td>'.'<br />';
-          echo '<td>'.'<br />';
+          echo '<div class="col-sm-12 well" >';
+
+               echo'<div class="col-sm-3 well" >';
+               print '<img src="'.$logo.'" height="80" width="80" alt="image_fond" /> </div>'; //affiche la photo
+
+               echo'<div class="col-sm-3 well" ><br><p><strong>';
+               echo "".$nom_entreprise;
+               echo '</strong></p><br><br></div>';   
+
+               echo'<div class="col-sm-3 well" ><br><p><strong>';
+               echo "".$actions;
+               echo '</strong></p><br><br></div>'; 
+
+                echo'<div class="col-sm-3 well" ><br><p><strong>';
+               echo "".$type_emploi;
+               echo '</strong></p><br><br></div>'; 
+          echo '</div>'; 
+
 
           }
           }

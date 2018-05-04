@@ -47,7 +47,7 @@ session_start();
 <div class="container text-center" style="margin:110px">    
   <div class="row" >
     <div class="col-sm-12 well" >
-      <div class="well" style="background-image: url(<?php include("vous_getfond.php"); ?>); background-repeat:no-repeat; background-position:center center;"> <!-- affiche l'image de fond -->
+      <div class="well" style="background-image: url(<?php include("vous_getfond.php"); ?>); background-repeat:no-repeat; background-position:center ;"> <!-- affiche l'image de fond -->
       <h1>  </h1>
 
       <?php include("vous_getphoto.php"); ?> <!-- affiche photo de profil -->
@@ -59,8 +59,8 @@ session_start();
           <div class="well">
              <h1>Informations générales:</h1>
              <p> <?php include("vous_getinfos.php"); ?> </p>
-            
-             <p> <input type="button" value="Télécharger CV" onclick="window.location='<?php include("vous_getlienCV.php"); ?>.' ;"> </p> <!-- telecharge CV -->
+              <p></p>
+             <p> <input type="button" value="Télécharger le CV" onclick="window.location='<?php include("vous_getlienCV.php"); ?>.' ;"> </p> <!-- telecharge CV -->
 
           </div>
 
@@ -79,7 +79,7 @@ session_start();
 
           </div>
 
-          <div class="well"> 
+          <div class="well">
             <h1>Modifier mes informations:</h1>
 
             <form action="vous_modification.php" TARGET="_BLANK"> <!-- ouvre une nouvelle fenêtre -->
