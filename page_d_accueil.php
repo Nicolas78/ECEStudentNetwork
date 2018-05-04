@@ -1,4 +1,4 @@
-<?php  session_start(); ?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,26 +89,21 @@
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
             <div class="panel-body">
-              <h2>Partager une photo, un article ou une idée </h2>
+              <h2>Poster une photo, un article ou une idée </h2>
 
-                <div class="well">
-                  <p> <a href="#">Images</a></p>
-                  <p> Nom de l'Evenement </p>
-                  <p> Date de l'Evenement</p>
-                    <div class="well">
-                      <p> Contenu</p>
-                    </div>
-                  <button type="button"> Poster <span class="glyphicon glyphicon-send"></span></button>
-                   </div>
-            </div>
-          </div>
-        </div>
-      </div>
+               <form method="POST" action="ajout_publication.php" enctype="multipart/form-data"> 
+
+                <label>  &nbsp &nbsp &nbsp Titre: </label> 
+                <input type="text" name="titre" id="titre"/> <br>
+                <br>
+                <label> Contenu: </label>
+                <input type="text" name="contenu" id="contenu" style="width: 500px; height: 150px; " /> <br>
+
+                <strong> <input type="submit" name="publier" value="publier" style="border:none;
+               padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:transparent;"> <span class="glyphicon glyphicon-send"> </strong>
+              </form>
       
-
-      <?php include("accueil_publication.php"); ?>
- 
-       
+      <?php include("accueil_publication.php"); ?>      
       
       </div>     
     </div>
