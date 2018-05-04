@@ -21,7 +21,7 @@
 		$id = $_SESSION['id'];
 
 
-		$sql2 = "SELECT DISTINCT titre_publication, contenu, nbreLike, nbreCommentaire, nbrePartage FROM publication INNER JOIN contact ON 
+		$sql2 = "SELECT titre_publication, contenu, nbreLike, nbreCommentaire, nbrePartage FROM publication INNER JOIN contact ON 
 		 publication.id_utilisateur = contact.id_utilisateur1 OR publication.id_utilisateur = contact.id_utilisateur2 WHERE contact.id_utilisateur1 = '".$id."' OR contact.id_utilisateur2 = '".$id."' ";
 		$result2 = mysqli_query($db_handle, $sql2);
 		
