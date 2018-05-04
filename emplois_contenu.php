@@ -65,7 +65,11 @@ if($bouton)
             <html>
             </strong></div>        
             
-            <div class="col-sm-2"> <button type="button" name="" > Envoyer candidature</button></div>
+            <div class="col-sm-2"> 
+            
+                  <a href="mailto:encom@gmail.com"?subject= Candidature" class="btn btn-default"> Envoyer candidature </a>
+            </div>
+
             </div>
             </html>';
 
