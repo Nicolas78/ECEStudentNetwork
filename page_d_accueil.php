@@ -48,10 +48,10 @@
   
 <div class="container text-center" style="margin:110px">    
   <div class="row">
-    <div class="col-sm-3 well">
-      <div class="well">
-        <p><a href="vous.php">Mon profil</a></p>
-        <!--<img src="bdd et sauvegarde/photo_profil_utilisateurs/profil1.jpg" class="img-circle" height="80" width="80" alt="Avatar">           <!---->
+    <div class="col-sm-3 well" style="background-color: #006687;">
+      <div class="well" style=" background-image: url(<?php include("vous_getfond.php"); ?>); background-repeat:no-repeat; background-position:center;">
+        <?php include("vous_getphoto.php"); ?> <!-- affiche photo de profil -->
+        <p> <br><a href="vous.php" style="  color:black;">Lien vers votre profil</a></p>        
         
       </div>
       <div class="well">
@@ -69,72 +69,46 @@
         </p>
         <p> <h3> Humeur:</h3>
          <?php include("humeur.php"); gethumeur(); ?>
-          <!--<button id="smiley_content" style="width:35px";> &#128515; </button>
-          <button id="smiley_bof" style="width:35px";> &#128528;</button>
-          <button id="smiley_pas_content" style="width:35px";>&#128544; </button>     -->
         </p>
 
         <p> <h3> Promotion: </h3> </p>
-         <?php include("promotion.php");?>
+         <p><?php include("promotion.php"); getpromotion(); ?> </p>
 
         <p> <h3><a href="#">Intêrets:</a></h3></p>
         <p>
                                   
           <span class="label label-success">  <?php include("interet.php"); getinteret(); ?>
-</span>
+         </span>
 
         </p>
-        <p><h3> CV:</h3></p>
+        <p><h3> CV:</h3>
+        <input type="button" value="Télécharger le CV" onclick="window.location='<?php include("vous_getlienCV.php"); ?>.' ;"> </p> <!-- telecharge CV -->
       </div>
      </div>
-    <div class="col-sm-7">
+    <div class="col-sm-9">
     
       <div class="row">
-        <div class="col-sm-12">
-          <div class="panel panel-default text-left">
+        <div class="col-sm-12" >
+          <div class="panel panel-default text-left" >
             <div class="panel-body">
-              <h2>Poster une photo, un article ou une idée </h2>
-
+              <h2>Poster une photo, un article ou une idée: </h2>
+              <div class="well">
                <form method="POST" action="ajout_publication.php" enctype="multipart/form-data"> 
 
-                <label>  &nbsp &nbsp &nbsp Titre: </label> 
+                <label>  &nbsp &nbsp &nbsp Titre: &nbsp &nbsp   </label> 
                 <input type="text" name="titre" id="titre"/> <br>
                 <br>
-                <label> Contenu: </label>
-                <input type="text" name="contenu" id="contenu" style="width: 500px; height: 150px; " /> <br>
+                <label> Contenu: &nbsp &nbsp </label>
+                <input type="text" name="contenu" id="contenu" style="width: 500px; height: 150px; " /> <br> <br>
 
-                <strong> <input type="submit" name="publier" value="publier" style="border:none;
-               padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:transparent;"> <span class="glyphicon glyphicon-send"> </strong>
+                <strong style="padding-left: 470px;"> <input type="submit" name="publier" value="publier" style="border:none;padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:transparent;"> <span class="glyphicon glyphicon-send"></span> </strong>
               </form>
-      
-      <?php include("accueil_publication.php"); ?>      
-      
-      </div>     
-    </div>
-    <div class="col-sm-2 well">
-      <h2>Mon réseau</h2>
-      <div class="well">
-        <p>membre1</p>
-      </div>
-      <div class="well">
-        <p>membre2</p>
-      </div>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group input-group">
-          <input type="text" class="form-control" placeholder="Search.." style="height:40px; width: 120px;">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-search" style="height:10px;"></span>
-            </button>
-          </span>        
+              </div>
+                  <?php include("accueil_publication.php"); ?> 
+          </div>     
         </div>
-      </form>
-
-
-
+      </div>
     </div>
-  </div>
-</div>
 
 <footer class="container-fluid text-center">
 
