@@ -65,12 +65,22 @@
       <div class="suppression">
       	<br>
         <h2> Supprimer un compte <span class="glyphicon glyphicon-trash"></span> </h2>
-		<br><br>
-      
+        <form method="POST">
+        <div style="font-size: 20px;color: #007179;"> Rechercher un contact : </div> <br>
+        <input type="text" name="rechercher2" id="rechercher2"/> <br>
+        <strong> <input type="submit" name="Rechercher" value="Rechercher" style="border:none;
+        padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:  transparent;"> </strong>
+        <strong> <input type="submit" name="Supprimer" value="Supprimer" style="border:none;
+        padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:  transparent;"> </strong>
+         </form>
 
+		<br><br><?php include("supprimer_utilisateur.php"); ?> 
       </div>
     </div>
   </div>
+  </div>
+
+
 
  
 <footer class="container-fluid text-center">
