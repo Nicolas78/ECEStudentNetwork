@@ -46,27 +46,15 @@
       <div class="well">
        <h1>Mes Notifications</h1>
       </div>
-      <div class="well">
-        
-          <div class="well"">
-            <div class="col-sm-6">Titre evenement</div>
-            <div class="col-sm-6"><strong>  Contenu evenement </strong></div>
+      <div class="well"> 
+          <div class="well">
+           <h2> Vous n'avez pas de nouvelle notification </h2>
           </div>
-          <div class="well"">
-            <div class="col-sm-6">Titre evenement</div>
-            <div class="col-sm-6"><strong>  Contenu evenement </strong></div>
-          </div>
-          <div class="well"">
-            <div class="col-sm-6">Titre evenement</div>
-            <div class="col-sm-6"><strong>  Contenu evenement </strong></div>
-          </div>
-       
       </div> 
     </div>
   </div>
 </div>
  
-
 <footer class="container-fluid text-center">
 
   <strong> ECE Student Network Copyright © 2018 </strong>
