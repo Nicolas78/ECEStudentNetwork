@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -64,23 +65,21 @@
      <div class="col-sm-6 well">
       <div class="suppression">
       	<br>
-        <h2> Supprimer un compte <span class="glyphicon glyphicon-trash"></span> </h2>
+        <h2> Supprimer un compte<span class="glyphicon glyphicon-trash"></span></h2>
+        <br>
         <form method="POST">
-        <div style="font-size: 20px;color: #007179;"> Rechercher un contact : </div> <br>
-        <input type="text" name="rechercher2" id="rechercher2"/> <br>
-        <strong> <input type="submit" name="Rechercher" value="Rechercher" style="border:none;
-        padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:  transparent;"> </strong>
-        <strong> <input type="submit" name="Supprimer" value="Supprimer" style="border:none;
-        padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:  transparent;"> </strong>
+          <div style="font-size: 20px;color: #007179;"> Pour supprimer un contact, veuillez saisir son adresse mail: </div> <br>
+          <input type="mail" name="mail" id="mail"/> <br><br>
+          <strong> <input type="submit" name="Supprimer" value="Supprimer le compte" style="border:none;
+          padding:15px 0 8px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:  transparent;"> </strong>
          </form>
 
-		<br><br><?php include("supprimer_utilisateur.php"); ?> 
+        <br><br><?php include("supprimer_utilisateur.php"); ?> 
+
       </div>
     </div>
   </div>
   </div>
-
-
 
  
 <footer class="container-fluid text-center">
