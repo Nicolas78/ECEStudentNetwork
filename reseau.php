@@ -48,6 +48,24 @@
   </div>
 </div>
 
+<div class="container text-center" style="margin:110px">    
+  <div class="row">
+    <div class="col-sm-12 well">
+      <div class="well">
+       <form method="POST"> 
+
+      <div style="font-size: 20px;color: #007179;"> Rechercher un contact : </div> <br>
+      <input type="text" name="rechercher1" id="rechercher1"/> &nbsp&nbsp
+      <strong> <input type="submit" name="Search" value="Search" style="border:none;
+       padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:transparent;"> </strong>    
+      </form>
+      </div>   
+      <?php include("rechercher_contact.php"); ?>    
+      </div> 
+    </div>
+  </div>
+</div>
+
 <footer class="container-fluid text-center">
 
   <strong> ECE Student Network Copyright © 2018 </strong>
