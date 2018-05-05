@@ -67,10 +67,11 @@
 					{
 						echo "".$data2[0];
 					}			
-				
-	       		 	echo '&nbsp; <button id = "like"><span class="glyphicon glyphicon-thumbs-up"></span></button> </div>';
+					
 
+	       		 	echo '<form action = "ajout_like.php" method = "post">
 
+	       		 	<strong> <input type="submit" name="like" value="like"> <span class="glyphicon glyphicon-thumbs-up"> </button>	</strong> </form>';
 
 	       		 	$sql3 = "SELECT COUNT(commentaire.id_commentaire) FROM commentaire INNER JOIN publication ON publication.id_publication = commentaire.id_publication WHERE publication.id_publication = '".$data1[2]."' ";
 					$result3 = mysqli_query($db_handle, $sql3);
@@ -81,7 +82,7 @@
 					}
 
 
-	       		 	echo '&nbsp; <button id = "like"><span class="glyphicon glyphicon-envelope"></span></button> </div>';
+	       		 	echo '&nbsp; <button id = "commentaire"><span class="glyphicon glyphicon-envelope"></span></button> </div>';
 
 
 
@@ -95,7 +96,7 @@
 
 
 
-	   				echo '&nbsp; <button id = "like"><span class="glyphicon glyphicon-share"></span></button> </div>';
+	   				echo '&nbsp; <button id = "partage"><span class="glyphicon glyphicon-share"></span></button> </div>';
 				echo'
         		<html>
         		</a>
