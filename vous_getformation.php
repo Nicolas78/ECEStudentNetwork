@@ -33,16 +33,16 @@
 
           echo '<div class="col-sm-12 well" >';
 
-               echo'<div class="col-sm-3 well" >';
+               echo'<div class="col-sm-5 well" >';
                print '<img src="Images/ECEParis.png" height="auto" width="auto" alt="logo_ECE" />'; //affiche le logo
 
-               echo'<div class="col-sm-3 well" ><br><p>Promotion<strong>';
+               echo'</div><div class="col-sm-3 well" ><br><p>Promotion: <strong>';
                echo "".$promo;
-               echo '</strong></p><br><br></div>';   
+               echo '</strong></p><br></div>';   
 
-               echo'<div class="col-sm-3 well" ><br>Spécialité<p><strong>';
+               echo'<div class="col-sm-4 well" ><br>Spécialité: <strong>';
                echo "".$specialite;
-               echo '</strong></p><br><br></div>'; 
+               echo '<p></strong></p></div>'; 
 
           echo '</div>'; 
 

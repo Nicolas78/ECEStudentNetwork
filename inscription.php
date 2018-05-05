@@ -1,4 +1,4 @@
-$<?php 
+<?php 
 
 // les variables pour créer un compte
 $Prenom = isset($_POST["Prenom"]) ? $_POST["Prenom"] : "";	

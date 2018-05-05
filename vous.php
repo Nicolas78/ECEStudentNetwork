@@ -4,12 +4,12 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head> 
-  <title>Accueil</title>
+  <title>Vous</title>
   <link rel="shortcut icon" href="logo3.ico">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="vous.css">
+ <link rel="stylesheet" type="text/css" href="vous.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -48,7 +48,6 @@ session_start();
   <div class="row" >
     <div class="col-sm-12 well" >
       <div class="well" style="background-image: url(<?php include("vous_getfond.php"); ?>); background-repeat:no-repeat; background-position:center ;"> <!-- affiche l'image de fond -->
-      <h1>  </h1>
 
       <?php include("vous_getphoto.php"); ?> <!-- affiche photo de profil -->
 
@@ -65,28 +64,78 @@ session_start();
           </div>
 
            <div class="well"> 
-            <h1>Experiences:</h1>
-              
-              <p> <pre> <?php include("vous_getemploi.php"); ?> </pre> </p>
-              
+              <h1>Experiences:</h1>   
+              <p> <pre> <?php include("vous_getemploi.php"); ?> </pre> </p>     
           </div>
 
 
           <div class="well"> 
             <h1>Formation:</h1>
-
               <p> <pre> <?php include("vous_getformation.php"); ?> </pre> </p>
-
           </div>
 
-          <div class="well">
+            <div class="modifierinfos">
+              <br>
             <h1>Modifier mes informations:</h1>
+              <br>
+             <!-- ouvre une nouvelle fenêtre -->
+            <form method="POST" action="vous_modification.php" enctype="multipart/form-data">
 
-            <form action="vous_modification.php" TARGET="_BLANK"> <!-- ouvre une nouvelle fenêtre -->
-    			<input type="submit" value="Modifier"  />
-			</form>
-          </div>
+              <label style="text-align :left; font-size: 20px;font-weight: bold ;color: #007179; "> Prénom: </label> 
+              <input type="text" name="Prenom" id="Prenom"/> <br><br>
 
+              <label style="text-align :left; font-size: 20px;font-weight: bold ;color: #007179;"> Nom: </label>
+              <input type="text" name="Nom" id="Nom"/> <br><br>
+
+              <label style="text-align :left; font-size: 20px;font-weight: bold ;color: #007179; "> E-Mail: </label>
+              <input type="email" name="Email" id="Email"/> <br><br>
+
+              <label style="text-align :left; font-size: 20px;font-weight: bold ;color: #007179; "> Mot de passe: </label>
+              <input type="password" name="Motdepasse" id="Motdepasse"/> <br><br>
+
+              <label style="text-align :left; font-size: 20px;font-weight: bold ;color: #007179; "> Promotion: </label>
+              <input type="text" name="Promotion" id="Promotion"/> <br><br>
+
+              <label style="text-align :left; font-size: 20px;font-weight: bold ;color: #007179; "> Humeur: </label>
+              <SELECT name="Humeur" id="Humeur" size="1">
+                <OPTION>CONTENT</OPTION>
+                <OPTION>BOF</OPTION>
+                <OPTION>PAS CONTENT</OPTION>
+              </SELECT>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              <label style="text-align :left; font-size: 20px;font-weight: bold ;color: #007179; margin-right: 50px;"> Spécialité: </label>
+              <SELECT name="Specialite" id="Specialite" size="1">
+                <OPTION>Sport</OPTION>
+                <OPTION>Art</OPTION>
+                <OPTION>Jeux-vidéos</OPTION>
+                <OPTION>Sciences</OPTION>
+                <OPTION>Matlab</OPTION>
+                <OPTION>C</OPTION>
+                <OPTION>C++</OPTION>
+                <OPTION>Java</OPTION>
+                <OPTION>Html/Css</OPTION>
+                <OPTION>Python</OPTION>
+              </SELECT>
+              <br><br>
+                
+              <label style="text-align :left; font-size: 20px;font-weight: bold ;color: #007179; "> Images:  </label> <br><br>
+
+              <label style="width: 300px;"> Importer une photo de profil:</label>
+              <input type="file" name="photo_de_profil" id="photo_de_profil" style="padding-left: 400px;" />  <br><br>
+              <label style="width: 300px;">  Importer une image de fond: </label> 
+              <input type="file" name="image_de_fond" style="padding-left :400px" " /> <br>
+
+               <label style="text-align :left; font-size: 20px;font-weight: bold ;color: #007179;"> CV:  </label> <br>
+
+              <label style="width: 300px;"> Importer votre CV: <br> </label>
+              <input type="file" name="cv" id="cv"  style="padding-left :400px" />  <br>
+               <p></p>
+
+              <strong> <input type="submit" name="modifier" value="Modifier" style="border:none;
+             padding:10px 0 6px 0; border-radius:75%; border-bottom:5px solid #007179; border-top:5px solid #007179; background:transparent;"> </strong>
+             </form>
+        </div>
       </div> 
     </div>
   </div>
